@@ -1,0 +1,29 @@
+body {
+    background-color: blanchedalmond;
+}
+
+.Footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+    .brand {
+        font-size: 2rem;
+    }
+    
+    .Footer {
+        position: absolute;
+        bottom: 0;
+        font-size: .1em;
+    }
+
+    .footerTitle {
+        font-size: 1rem;
+    }
+
+    .navbar {
+        height: 5rem;
+    }
+}
