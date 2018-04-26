@@ -2,11 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
+import DonateInputBox from "../../components/DonateInputBox";
+
+
+
 
 class Donate extends Component {
   state = {
   };
-  
+
   componentDidMount() {
   }
 
@@ -14,8 +18,13 @@ class Donate extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="ml-10">
+          <Col size="ml-6">
             <h1>Donate Page</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col size="ml-6">
+            <DonateInputBox />
           </Col>
         </Row>
       </Container>
