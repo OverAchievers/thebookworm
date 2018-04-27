@@ -1,15 +1,24 @@
 .brand {
     background-image: -webkit-linear-gradient(#EB6864, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     font-size: 3rem;
     font-weight: bolder;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     -webkit-text-stroke-color: black;
     -webkit-text-stroke-width: 1.50px;
 }
 
 .btn {
     background-color: #EB6864;
+    margin-right: 5%;
+    margin-top: 10%;
+    box-shadow: 3px 3px 6px black;
+    transition: box-shadow 1s, transform 2s;
+}
+
+.btn:hover {
+    transform: translate(3px,6px);
+	transition: box-shadow 1s, transform 2s;
 }
 
 .login {
@@ -21,6 +30,7 @@ nav {
     background-color: grey;
     background-image: url("./images/books-library.jpg");
     background-size: 100% 120%;
-    height: 10.75rem;
     box-shadow: 0px 0px 20px 0 rgb(87, 87, 87);
+    height: 10.75rem;
+    margin-bottom: 4%;
 }
