@@ -1,0 +1,18 @@
+.icon {
+    filter: drop-shadow(2px 2px 3px rgb(65, 64, 64));
+    margin: 1%;
+    padding: 1%;
+    -webkit-filter: drop-shadow(2px 2px 3px rgb(65, 64, 64));  
+}
+
+.iconContainer {
+    margin: 1% 5% 5% 5%;
+    width: 175px;
+}
+
+.helloUser {
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: 10%;
+    padding: 1%;
+}

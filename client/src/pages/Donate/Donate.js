@@ -20,10 +20,6 @@ class Donate extends Component {
         <Row>
           <Col size="ml-6">
             <h1>Donate Page</h1>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="ml-6">
             <DonateInputBox />
           </Col>
         </Row>
