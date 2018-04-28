@@ -13,6 +13,10 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+    .book {
+        margin-left: 12%;
+    }
+
     .brand {
         font-size: 2rem;
     }

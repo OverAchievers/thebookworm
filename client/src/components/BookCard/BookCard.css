@@ -1,43 +1,53 @@
-.card {
-    background: #fff;
-    border-radius: 2px;
-    height: 200px;
-    margin-left: 5%;
-    position: relative;
-    width: 220px;
-    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+.book {
     display: inline-block;
+    margin: 1rem;
+    /* Just to show space between the book to the right. */
+    position: relative;
 }
 
-.card>.img-container {
-    height: 100%;
-    overflow: hidden;
-    text-align: center;
-    background: #6CADDC;
+.book-cover {
+    vertical-align: top;
+    height: auto;
+    max-width: 300px;
+    width: auto;
 }
 
-.card>.img-container>img {
-    width: 100%
-}
-
-.card>.content>ul {
-    list-style-type: none;
-    font-size: 12px;
-}
-
-.card>.content>ul>li {
-    margin-top: 18px;
-}
-
-.card>.remove {
-    color: #83ff17;
-    font-size: 48px;
+.book-info {
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 1rem;
+    bottom: 0;
+    left: 0;
     position: absolute;
-    top: -20px;
-    right: 5px;
-    cursor: pointer;
+    right: 0;
+    text-align: left;
 }
 
-.card>.remove:hover {
-    color: #EB6864;
+.book-tags {
+    right: 1.5rem;
+    position: absolute;
+    top: -2rem;
+}
+
+.book-tag {
+    background: rgba(100, 0, 200, 0.75);
+    border-radius: 0.25rem 0.25rem 0 0;
+    display: inline-block;
+    font-size: 0.85rem;
+    line-height: 2rem;
+    margin-left: 0.25rem;
+    padding: 0 0.5rem;
+}
+
+.book-tag--year {
+    background: rgba(200, 0, 0, 0.75);
+}
+
+.book-name {
+    margin-top: 0;
+}
+
+.book-author {
+    font-weight: 700;
+    margin-bottom: 0;
 }
