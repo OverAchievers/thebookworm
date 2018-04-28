@@ -28,16 +28,16 @@ removeBook = id => {
         <Row>
           <Col size="ml-10">
             <span className="pageTitle">Manage Your Books</span>
-              <UserIcon />
-          {this.state.books.map(book => (
-            <BookCard
-              removeBook={this.removeBook}
-              id={book.id}
-              key={book.id}
-              author={book.author}
-              title={book.title}
-             />
-          ))}
+            <UserIcon />
+            {this.state.books.map(book => (
+               <BookCard
+                 removeBook={this.removeBook}
+                 id={book.id}
+                 key={book.id}
+                 author={book.author}
+                 title={book.title}
+                />
+            ))}
           </Col>
         </Row>
       </Container>

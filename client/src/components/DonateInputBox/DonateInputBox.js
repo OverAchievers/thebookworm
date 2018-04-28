@@ -1,11 +1,8 @@
-// import React from "react";
 import React, { Component } from "react";
 import "./DonateInputBox.css";
 import { Col, Row, Container } from "../../components/Grid";
 import Barcode from "react-barcode";
 import axios from "axios";
-var createClass = require('create-react-class');
-
 
 class DonateInputBox extends Component {
     // Setting the component's initial state
