@@ -45,7 +45,7 @@ class DonateInputBox extends Component {
               <button
                 className="btn btn-outline-secondary"
                 type="button"
-                onClick={props.handleFormSubmit}
+                onClick={this.handleFormSubmit}
               >
                 Search
               </button>
