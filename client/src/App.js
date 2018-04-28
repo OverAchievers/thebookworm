@@ -22,6 +22,7 @@ const App = () => (
         <Route exact path="/manage" component={Manage} />
         <Route component={NoMatch} />
       </Switch>
+      <div className="push"></div>
       <Footer />
     </div>
   </Router>
