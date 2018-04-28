@@ -1,20 +1,19 @@
 const bookRouter = require("express").Router();
 const bookController = require("../../controllers/bookController");
 
-// Matches with "/api/book"
+// Matches with "/api/books"
 bookRouter.route("/")
-  .get(bookController.getAll)
+  .get(bookController.search)
   .post(bookController.create);
 
-bookRouter.route("/?user=&title=&zip=&author=")
-  .get(bookController.search);
-
+// Matches with "/api/books/<id>"
 bookRouter.route("/:id")
   .get(bookController.get)
   .put(bookController.update)
   .delete(bookController.delete);  
 
-bookRouter.route("/lookup/:isbn")
+// Matches with "/api/books/isbn/<id>"
+bookRouter.route("/isbn/:isbn")
   .get(bookController.getISBNDetails);
 
 module.exports = bookRouter;

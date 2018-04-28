@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
 import BookCard from "../../components/BookCard";
 import UserIcon from "../../components/UserIcon";
+import NateCard from "../../components/NateCard";
 import "./Manage.css";
 import books from "../../books.json"; // This is for Temporary Cards
 
@@ -11,8 +12,8 @@ class Manage extends Component {
   state = {
     books
   };
-  
-removeBook = id => {
+
+  removeBook = id => {
     // Filter this.state.books for books with an id not equal to the id being removed
     const books = this.state.books.filter(book => book.id !== id);
     // Set this.state.books equal to the new books array

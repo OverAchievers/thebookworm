@@ -6,14 +6,30 @@ import DonateInputBox from "../../components/DonateInputBox";
 import BookCard from "../../components/BookCard";
 
 
-
-
 class Donate extends Component {
   state = {
+    search: "",
+    results: [],
+    error: ""
   };
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
+
+  handleInputChange = event => {
+    this.setState({ search: event.target.value });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    API.getBook(this.state.search)
+      .then(res => {
+        if (res.data.status === "error") {
+          throw new Error(res.data.message);
+        }
+        this.setState({ results: res.data.message, error: "" });
+      })
+      .catch(err => this.setState({ error: err.message }));
+  };
 
   render() {
     return (
