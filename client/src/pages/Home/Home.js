@@ -7,27 +7,19 @@ import Browsebtn from "../../components/Browsebtn";
 import "./Home.css";
 
 
-class Home extends Component {
-  state = {
-  };
+const Home = () => (
+  <div>
+    <h2 className="heading">Home Page </h2>
+        <Col size="sm-12">
+          <Browsebtn />
+          <Donatebtn /> 
+        </Col>
+  </div>
+);
+     
+     
   
-  componentDidMount() {
-  }
-
-  render() {
-    return (
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-          <h6 className="home-page">Home Page</h6>
-            <Browsebtn />
-            <Donatebtn />
-          </Col>
-        </Row>
-      </Container>
-      
-    );
-  }
-}
+  
+    
 
 export default Home;

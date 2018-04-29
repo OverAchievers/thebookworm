@@ -1,42 +1,33 @@
 .browsebtn {
-  color: #EB6864;
-
+  color: green;
+  
 }
 
-
-/*.pass {
-  left: 1%;
+.browsebtn {
+  left: 10px;
   background: #E53935;
 }
 
-.pass::after {
-  content: "\f165";
+.browsebtn {
+   border-radius: 50%;
+    margin-right: 40rem; 
+width:50%;
+font-family:'Russo One', sans-serif;
+}
+.Bb{
+  font-family:'Russo One', sans-serif;
 }
 
-.pick {
-  right: 1%;
-  background: #43A047;
+.browse-btn {
+  margin-bottom:40px;
+  margin-left:30%;
+  background: none;
+  border: none;
+  width: 15em;
+    position: absolute;
+    top: 50%;
+    
 }
 
-.pick::after {
-  content: "\f164";
-}
 
-.pick:hover::after, .pass:hover::after {
-  animation: iconBounce .57s 1;
-}
 
-@keyframes iconBounce {
-  0% {
-    font-size: 24px;
-  }
-  
-   50% {
-    font-size: 28px;
-  }
-  
-  100% {
-    font-size: 24px;
-  }*/
-
-/*}*/

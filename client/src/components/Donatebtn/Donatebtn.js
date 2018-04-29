@@ -1,16 +1,14 @@
 import React from "react";
-import "./DonateBtn.css";
+import "./Donatebtn.css";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
-const DonateBtn = props => (
-  // <span className="donate-btn" {...props}>
-    
-  // </span>
-  <div>
-        <button type="button" className="donate-btn btn-sm">Browse</button>
-    </div>
+const Donatebtn = props => (
+
+<button className="donate"> <img className="donate-btn" src="https://media.giphy.com/media/V8oj5SlnHsZMY/giphy.gif" /> <h5 class="Db">Donate</h5> </button> 
+
+
 
 );
 
-export default DonateBtn;
+export default Donatebtn;
