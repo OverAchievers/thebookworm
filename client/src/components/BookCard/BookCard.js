@@ -1,27 +1,47 @@
 import "./BookCard.css";
-import React, {Component} from "react";
-import {Col, Row, Container} from "../../components/Grid";
+import React, { Component } from "react";
+import { Col, Row, Container } from "../../components/Grid";
+//Libraries from react-bootstrap (npm install --save react-bootstrap )
+import Button from 'react-bootstrap/lib/Button';
+import BookBrowseModal from "../../components/BookBrowseModal";
 
 class BookCard extends Component {
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
+            browseModalShow: false,
+            manageModalShow: false
+        };
+    };
+
     render() {
+
+        let browseModalOpen = () => this.setState({ browseModalShow: true });
+        let browseModalClose = () => this.setState({ browseModalShow: false });
+        let manageModalOpen = () => this.setState({ manageModalShow: true });
+        let manageModalClose = () => this.setState({ manageModalShow: false });
+
         return (
             <div className="book">
                 <img
-                    src={"http://i.imgur.com/lWTEoAS.jpg"}
-                    alt={"Harry Potter and the Order of the Phoenix Book Cover"}
+                    src={"./default-book.png"}
+                    alt={""}
                     className="book-cover"
                     width="300"
-                    height="400px"/>
+                    height="400px" />
                 <div className="book-info">
-                    <div className="book-tags">
-                        <span className="book-tag">Magic</span>
-                        <span className="book-tag book-tag--year">2007</span>
-                    </div>
                     <p className="book-name">
-                        Harry Potter and the Order of the Phoenix
+                        {this.props.book.title}
                     </p>
-                    <p className="book-author">J.K. Rowling</p>
+                    <p className="book-author">{this.props.book.author}</p>
+                    <Button
+                        bsStyle="primary"
+                        // onClick={() => this.setState({ modalShow: true })}
+                        onClick={browseModalOpen}>
+                        Details
+                    </Button>
                 </div>
+                <BookBrowseModal visible={this.state.browseModalShow} onClickBackdrop={browseModalClose} book={this.props.book} />
             </div>
         );
     }

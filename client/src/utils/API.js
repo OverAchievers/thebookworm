@@ -10,11 +10,11 @@ export default {
     );
   },
   // Gets the book with the given id
-  searchBook: function(searchString) {
+  searchBook: function(searchString, searchContext) {
     if(searchString === null){
       return axios.get("/api/books");
     } else{
-      return axios.get("/api/books?title=" + searchString);
+      return axios.get("/api/books?"+ searchContext + "=" + searchString);
     }
     
   }
