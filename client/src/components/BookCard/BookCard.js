@@ -1,25 +1,30 @@
-import React from "react";
 import "./BookCard.css";
+import React, {Component} from "react";
+import {Col, Row, Container} from "../../components/Grid";
 
-const BookCard = props => (
-    <div className="card">
-        <div className="img-container">
-            <img alt={props.name} src={"https://s-media-cache-ak0.pinimg.com/originals/fe/32/49/fe32495d45283cd6860ae122f0aeaad9.png"}/>
-        </div>
-        <div className="content">
-            <ul>
-                <li>
-                    <strong>Title:</strong>
-                    {props.title}
-                </li>
-                <li>
-                    <strong>Author:</strong>
-                    {props.author}
-                </li>
-            </ul>
-        </div>
-        <span onClick={() => props.removeBook(props.id)} className="remove">𝘅</span>
-    </div>
-);
+class BookCard extends Component {
+    render() {
+        return (
+            <div className="book">
+                <img
+                    src={"http://i.imgur.com/lWTEoAS.jpg"}
+                    alt={"Harry Potter and the Order of the Phoenix Book Cover"}
+                    className="book-cover"
+                    width="300"
+                    height="400px"/>
+                <div className="book-info">
+                    <div className="book-tags">
+                        <span className="book-tag">Magic</span>
+                        <span className="book-tag book-tag--year">2007</span>
+                    </div>
+                    <p className="book-name">
+                        Harry Potter and the Order of the Phoenix
+                    </p>
+                    <p className="book-author">J.K. Rowling</p>
+                </div>
+            </div>
+        );
+    }
+}
 
 export default BookCard;
