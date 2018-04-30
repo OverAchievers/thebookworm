@@ -4,23 +4,38 @@ body {
 
 .Footer {
     bottom: 0;
-    position: fixed;
     width: 100%;
 }
 
+/* To adjust the Footer on your page this needs to be added to your page.CSS file */
+.push {
+    height: 200px; /* Set height here. */
+}
+
 @media screen and (max-width: 480px) {
+    .book {
+        margin-left: 12%;
+    }
+
     .brand {
         font-size: 2rem;
     }
+
+    .card {
+        margin-left: 20%;
+    }
     
     .Footer {
-        position: absolute;
         bottom: 0;
         font-size: .1em;
     }
 
     .footerTitle {
         font-size: 1rem;
+    }
+
+    .iconContainer {
+        margin: 3% 0 10% 30%;
     }
 
     .navbar {
