@@ -9,25 +9,26 @@
 }
 
 .browsebtn {
-   border-radius: 50%;
-    margin-right: 40rem; 
-width:50%;
-
+width: 100px;
+    background-color: none;
+    border-radius: 50%;
+  margin-right:50%;
 }
+
 .Bb{
   font-family:'Russo One', sans-serif;
 }
 
 .browse-btn {
+  width:20em;
   margin-bottom:40px;
   margin-left:30%;
   background: none;
   border: none;
-  width: 12em;
-    position: absolute;
-    top: 50%;
-    
-}
+  
+  position: absolute;
+  top: 50%;
+  }
 
 
 

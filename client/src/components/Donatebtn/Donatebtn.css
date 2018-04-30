@@ -1,11 +1,9 @@
 .donate-btn {
-  background-color: white;
-  
-  	width: 20%;
-  background-color: none;
-  border-radius: 50%;
-  text-align: center;
-margin-right:50%;
+  	width: 20px;
+  	background-color: none;
+  	border-radius: 50%;
+  	text-align: center;
+	margin-right:50%;
 
 }
 .Db{

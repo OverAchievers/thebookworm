@@ -10,7 +10,7 @@ import "./Home.css";
 const Home = () => (
   <div>
     <h2 className="heading">Home Page </h2>
-        <Col size="sm-12">
+        <Col size="md-12">
           <Browsebtn />
           <Donatebtn /> 
         </Col>
