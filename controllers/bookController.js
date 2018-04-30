@@ -13,7 +13,7 @@ module.exports = {
   },
   search: function (req, res) {
     if (isEmpty(req.query)) {
-      console.log("query parms are not defined. So getting all books");
+      // console.log("query parms are not defined. So getting all books");
       db.Book
         .find()
         .sort({ date: -1 })
@@ -23,7 +23,7 @@ module.exports = {
         })
         .catch(err => res.status(422).json(err));
     } else {
-      console.log("query parms are defined");
+      // console.log("query parms are defined");
       const zipcode = req.query.zipcode;
       const title = req.query.title;
       const author = req.query.author;
@@ -47,12 +47,12 @@ module.exports = {
         search.desc = { $regex: new RegExp(".*" + desc + ".*", "i") };
       }
 
-      console.log(search);
+      // console.log(search);
       db.Book
         .find(search)
         .sort({ date: -1 })
         .then(dbModel => {
-          console.log(dbModel);
+          // console.log(dbModel);
           res.json(dbModel);
         })
         .catch(err => res.status(422).json(err));

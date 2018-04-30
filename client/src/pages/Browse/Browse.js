@@ -5,11 +5,39 @@ import API from "../../utils/API";
 
 class Browse extends Component {
   state = {
-    books: []
+    books: [],
+    searchString: null
   };
 
   componentDidMount() {
-  }
+    this.loadBooks(null);
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    console.log("search string is: " + value);
+    this.setState({
+      [name]: value
+    });
+    this.loadBooks(value);
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    console(this.stage.searchString);
+    this.loadBooks(this.state.searchString);
+
+  };
+  loadBooks = (searchString) => {
+    console.log("in loadbooks method");
+    API.searchBook(searchString)
+      .then(res =>{
+        // console.log(res);
+        console.log(res.data);
+        this.setState({ books: res.data })
+      })
+      .catch(err => console.log(err));
+  };
 
   render() {
     return (
@@ -17,14 +45,27 @@ class Browse extends Component {
         <Row>
           <Col size="lg-12 md-12 sm-12">
             <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+              <input onChange={this.handleInputChange} name="searchString" value={this.state.searchString} placeholder="Search"></input>
             </form>
             <hr></hr>
           </Col>
         </Row>
         <Row>
+          {this.state.books.length ? (
           <Col size="md-12 lg-12">
+          {this.state.books.map(book => (
+                  <div key={book._id}>
+                      <strong>
+                        {book.title} by {book.author}
+                      </strong>
+                   
+                  </div>
+                ))}
+                    </Col>
 
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
 
 
                     <div class="card horizontal m-auto" id="cliqueCard" >
@@ -61,7 +102,6 @@ class Browse extends Component {
                 </div>
               </div>
             </div>
-          </Col>
         </Row>
         <div class="push"></div>
       </Container>
