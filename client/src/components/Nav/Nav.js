@@ -1,11 +1,11 @@
 import React from "react";
-import "./Nav.css";
 
 const Nav = () => (
-   <nav className="navbar">
-      <h1 className="brand">The Book Worm</h1>
-      <button className="btn float-right login">Login</button>
-    </nav>
+  <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a className="navbar-brand" href="/mysaved">
+      The Book Worm
+    </a>
+  </nav>
 );
 
 export default Nav;

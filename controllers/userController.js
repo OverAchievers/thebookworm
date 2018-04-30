@@ -31,7 +31,7 @@ module.exports = {
     
     
     // db.User
-    //   .find({'email': email})
+    //   .find(\\{'email': email})
     //   .then(dbModel => res.json(dbModel))
     //   .catch(err => res.status(422).json(err));    
 
