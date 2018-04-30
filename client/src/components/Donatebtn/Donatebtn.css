@@ -1,7 +1,7 @@
 .donate-btn {
   background-color: white;
   
-  	width: 20px;
+  	width: 20%;
   background-color: none;
   border-radius: 50%;
   text-align: center;
@@ -9,9 +9,9 @@ margin-right:50%;
 
 }
 .Db{
-	
+	text-align: center;	
 	font-weight: bold;
-	font-family:'Russo One', sans-serif;
+	font-family: 'Russo One', sans-serif;
 }
 
 .donate{
