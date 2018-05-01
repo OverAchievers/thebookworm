@@ -36,7 +36,7 @@ module.exports = {
         orSearch.push({"title" : { $regex: new RegExp(".*" + any + ".*", "i") }});
         orSearch.push({"author" : { $regex: new RegExp(".*" + any + ".*", "i") }});
         orSearch.push({"isbn" : { $regex: new RegExp(".*" + any + ".*", "i") }});
-        orSearch.push({"desc" : { $regex: new RegExp(".*" + any + ".*", "i") }});
+        // orSearch.push({"desc" : { $regex: new RegExp(".*" + any + ".*", "i") }});
         console.log(orSearch);
         db.Book
         .find()

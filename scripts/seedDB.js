@@ -21,7 +21,7 @@ const userSeed = [
       addr_line_2: "everywhere",
       zipcode: 55426,
       city: "St Louis Park",
-      state: "MN"
+      state: "MN" 
     },
     share_address: true,
     active_status: true
@@ -96,12 +96,14 @@ const userSeed = [
   },
 ];
 
+console.log(userSeed);
+
 db.User
   .remove({})
-  .then(() => db.Book.collection.insertMany(userSeed))
+  .then(() => db.User.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
-    db.Book
+    db.User
       .find()
       .then(users => {
 

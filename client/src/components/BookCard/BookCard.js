@@ -24,7 +24,7 @@ class BookCard extends Component {
         return (
             <div className="book">
                 <img
-                    src={"./default-book.png"}
+                    src={this.props.book.book_image}
                     alt={""}
                     className="book-cover"
                     width="300"
