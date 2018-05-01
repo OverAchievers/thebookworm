@@ -3,7 +3,7 @@ const userRouter = require("./user");
 const bookRouter = require("./book");
 
 // routes
-router.use("/users", userRouter);
+router.use("/user", userRouter);
 router.use("/books", bookRouter);
 
 module.exports = router;
