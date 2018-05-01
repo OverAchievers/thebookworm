@@ -1,0 +1,34 @@
+.browsebtn {
+  color: green;
+  
+}
+
+.browsebtn {
+  left: 10px;
+  background: #E53935;
+}
+
+.browsebtn {
+width: 100px;
+    background-color: none;
+    border-radius: 50%;
+  margin-right:50%;
+}
+
+.Bb{
+  font-family:'Russo One', sans-serif;
+}
+
+.browse-btn {
+  width:20em;
+  margin-bottom:40px;
+  margin-left:30%;
+  background: none;
+  border: none;
+  
+  position: absolute;
+  top: 50%;
+  }
+
+
+
