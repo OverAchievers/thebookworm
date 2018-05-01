@@ -1,21 +1,46 @@
-.browsebtn {
-margin-top: 17px;
-margin-left: 10px; 
+.button-container {
+margin-left: 22%;
+ 
 }
-/*.browbtn button{
-margin-top: 10%;
-margin-right: 10rem; 
-}*/
+.donate-btn:hover{
+	opacity: 1;
+ transform: scale(1.00);
+}
 .donate-btn{
-margin-top:10px; 
-margin-right: 180px; 
-width: 80px;  
- }
+	 opacity: 1;
+ transform: scale(1.10);
+}
+.donate-btn{
+	margin-right: 20%; 
+}
 
+.browsebtn:hover{
+	opacity: 1;
+ transform: scale(1.00);
+}
+.browsebtn{
+	 opacity: 1;
+ transform: scale(1.10);
+}
+
+.div-class{ 
+margin-left: 32%;
+}
+.browsebtn{
+	margin-top:13%;
+}
 
 .heading{
-
+	color: #97461C;
+margin-left:41%;
 font-family:'Russo One', sans-serif;
 
+}
+.push {
+    height: 100px;  
+}
+
+.button-row{
+padding-top: 10%; 
 }
 
