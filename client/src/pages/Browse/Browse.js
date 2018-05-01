@@ -1,72 +1,71 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
+import BookCard from "../../components/BookCard";
 import API from "../../utils/API";
 
 class Browse extends Component {
   state = {
-    books: []
+    books: [],
+    searchString: "",
+    searchContext: "any"
   };
 
   componentDidMount() {
-  }
+    this.loadBooks(null, this.state.searchContext);
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    console.log("search string is: " + value);
+    this.setState({
+      [name]: value
+    });
+    this.loadBooks(value, this.state.searchContext);
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    console(this.stage.searchString);
+    this.loadBooks(this.state.searchString, this.state.searchContext);
+  };
+
+  loadBooks = (searchString, searchContext) => {
+    console.log("in loadbooks method");
+    API.searchBook(searchString, searchContext)
+      .then(res => {
+        console.log(res.data);
+        this.setState({ books: res.data })
+      })
+      .catch(err => console.log(err));
+  };
 
   render() {
     return (
       <Container fluid>
         <Row>
           <Col size="lg-12 md-12 sm-12">
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+            <form className="form-inline">
+              <input onChange={this.handleInputChange} name="searchString" value={this.state.searchString} placeholder="Search"></input>
             </form>
             <hr></hr>
           </Col>
         </Row>
         <Row>
-          <Col size="md-12 lg-12">
-
-
-
-                    <div class="card horizontal m-auto" id="cliqueCard" >
-                    <div class="card-header">
-                      <span class="card-title">Card Title</span>
-                      <a class="btn-floating halfway-fab waves-effect waves-light red" data-toggle="modal" data-target="#exampleModalCenter"><i class="material-icons">add</i></a>
-                    </div>
-                    <div class="card-content">
-                      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                  </div>
-
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <p class="">
-                      <img class='rounded-circle' width='50' height='50' src="https://lh4.googleusercontent.com/-Iof98iTcQO8/AAAAAAAAAAI/AAAAAAAAIsk/7mP2ynQOq9U/s96-c/photo.jpg"></img>
-                        <span>Organizer: </span>
-                        <span class=""></span>
-                    </p>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <p>Date &amp; Time</p>
-                    <p>Location</p>
-                    <p>Description</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data="">3-way Button</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
+          {this.state.books.length ? (
+            <Col size="md-12 lg-12">
+              {this.state.books.map(book => (
+                <BookCard book={book} key={book._id}></BookCard>
+              ))}
+            </Col>
+          ) : (
+            <h3>No Results to Display</h3>
+          )}
         </Row>
-        <div class="push"></div>
+        <div className="push"></div>
       </Container>
-          );
-        }
-      }
-      
-      export default Browse;
+    );
+  }
+}
+
+export default Browse;

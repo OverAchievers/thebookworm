@@ -1,0 +1,12 @@
+.iconContainer {
+    margin-left: 80%;
+    margin-top: -5%;
+}
+
+.pageTitle{
+    color: #EB6864;
+    text-shadow: 2px 1px black;
+    font-size: 2.25rem;
+    padding: 1% 5% 5% 8%;
+    width: 9em;
+}

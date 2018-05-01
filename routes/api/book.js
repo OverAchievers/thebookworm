@@ -10,11 +10,13 @@ bookRouter.route("/")
 bookRouter.route("/:id")
   .get(bookController.get)
   .put(bookController.update)
-  .delete(bookController.delete);  
+  .delete(bookController.delete);
 
 // Matches with "/api/books/isbn/<id>"
 bookRouter.route("/isbn/:isbn")
   .get(bookController.getISBNDetails);
 
-module.exports = bookRouter;
+bookRouter.route("/user/:user")
+  .get(bookController.getUser);
 
+module.exports = bookRouter;
