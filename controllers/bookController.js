@@ -13,7 +13,6 @@ module.exports = {
   },
   search: function (req, res) {
     if (isEmpty(req.query)) {
-      console.log("query parms are not defined. So getting all books");
       db.Book
         .find()
         .sort({ date: -1 })
@@ -22,8 +21,8 @@ module.exports = {
           res.json(dbModel);
         })
         .catch(err => res.status(422).json(err));
-    } else {
-      console.log("query parms are defined");
+      } else {
+      const any = req.query.any;
       const zipcode = req.query.zipcode;
       const title = req.query.title;
       const author = req.query.author;
@@ -31,31 +30,48 @@ module.exports = {
       const desc = req.query.desc;
 
       let search = {};
-      if (zipcode !== undefined) {
-        search.zipcode = zipcode;
-      }
-      if (title !== undefined) {
-        search.title = { $regex: new RegExp(".*" + title + ".*", "i") };
-      }
-      if (author !== undefined) {
-        search.author = { $regex: new RegExp(".*" + author + ".*", "i") };
-      }
-      if (isbn !== undefined) {
-        search.isbn = isbn;
-      }
-      if (desc !== undefined) {
-        search.desc = { $regex: new RegExp(".*" + desc + ".*", "i") };
-      }
-
-      console.log(search);
-      db.Book
-        .find(search)
+      if(any !== undefined){
+        let orSearch = [];
+        orSearch.push({"zipcode" : { $regex: new RegExp(".*" + any + ".*", "i") }});
+        orSearch.push({"title" : { $regex: new RegExp(".*" + any + ".*", "i") }});
+        orSearch.push({"author" : { $regex: new RegExp(".*" + any + ".*", "i") }});
+        orSearch.push({"isbn" : { $regex: new RegExp(".*" + any + ".*", "i") }});
+        // orSearch.push({"desc" : { $regex: new RegExp(".*" + any + ".*", "i") }});
+        console.log(orSearch);
+        db.Book
+        .find()
+        .or(orSearch)
         .sort({ date: -1 })
         .then(dbModel => {
-          console.log(dbModel);
           res.json(dbModel);
         })
         .catch(err => res.status(422).json(err));
+      } else{
+        if (zipcode !== undefined) {
+          search.zipcode = zipcode;
+        }
+        if (title !== undefined) {
+          search.title = { $regex: new RegExp(".*" + title + ".*", "i") };
+        }
+        if (author !== undefined) {
+          search.author = { $regex: new RegExp(".*" + author + ".*", "i") };
+        }
+        if (isbn !== undefined) {
+          search.isbn = isbn;
+        }
+        if (desc !== undefined) {
+          search.desc = { $regex: new RegExp(".*" + desc + ".*", "i") };
+        }
+  
+        db.Book
+          .find(search)
+          .sort({ date: -1 })
+          .then(dbModel => {
+            res.json(dbModel);
+          })
+          .catch(err => res.status(422).json(err));
+      }
+
     }
 
   },
