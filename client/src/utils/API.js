@@ -16,6 +16,9 @@ export default {
     } else{
       return axios.get("/api/books?"+ searchContext + "=" + searchString);
     }
-    
+
+  },
+  getUserBooks: function(userId){
+    return axios.get("/api/books/user/"+userId);
   }
 };

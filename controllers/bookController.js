@@ -62,7 +62,7 @@ module.exports = {
         if (desc !== undefined) {
           search.desc = { $regex: new RegExp(".*" + desc + ".*", "i") };
         }
-  
+
         db.Book
           .find(search)
           .sort({ date: -1 })
@@ -81,6 +81,15 @@ module.exports = {
     .sort({ date: -1 })
     .then(dbModel => {
       console.log(dbModel);
+      res.json(dbModel);
+    })
+    .catch(err => res.status(422).json(err));
+  },
+  getUser: function(req, res){
+    db.Book
+    .find({user:req.params.user})
+    .sort({date:-1})
+    .then(dbModel=> {
       res.json(dbModel);
     })
     .catch(err => res.status(422).json(err));
