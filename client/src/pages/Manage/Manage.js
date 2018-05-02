@@ -8,7 +8,8 @@ import BookCard from "../../components/BookCard";
 
 class Manage extends Component {
   state = {
-    books : []
+    books : [],
+    show: false
   };
 
 componentDidMount(){
@@ -36,6 +37,9 @@ render() {
     <Container fluid>
       <Row>
         <Col size="lg-12 md-12 sm-12">
+          <form className="form-inline">
+            <input onChange={this.handleInputChange} name="searchString" value={this.state.searchString} placeholder="Search"></input>
+          </form>
           <hr></hr>
         </Col>
       </Row>

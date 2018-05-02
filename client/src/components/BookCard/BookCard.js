@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../../components/Grid";
 //Libraries from react-bootstrap (npm install --save react-bootstrap )
 import Button from 'react-bootstrap/lib/Button';
 import BookBrowseModal from "../../components/BookBrowseModal";
+import BookManageModal from "../../components/BookManageModal";
 
 class BookCard extends Component {
     constructor(props, context) {
@@ -37,11 +38,13 @@ class BookCard extends Component {
                     <Button
                         bsStyle="primary"
                         // onClick={() => this.setState({ modalShow: true })}
-                        onClick={browseModalOpen}>
+                        onClick={manageModalOpen}>
+
                         Details
                     </Button>
                 </div>
                 <BookBrowseModal visible={this.state.browseModalShow} onClickBackdrop={browseModalClose} book={this.props.book} />
+                <BookManageModal visible={this.state.manageModalShow} onClickBackdrop={manageModalClose} book={this.props.book} />
             </div>
         );
     }
