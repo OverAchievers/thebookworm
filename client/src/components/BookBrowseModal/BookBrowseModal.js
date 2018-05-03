@@ -14,18 +14,18 @@ class BookBrowseModal extends Component {
             //This modal needs to be enhanced to show more book and donor details
             <Modal {...this.props}>
                 <div className="modal-header">
-                    <h5 className="modal-title">{this.props.book.title}</h5>
+                    <h5 className="modal-title">{this.props.title}</h5>
                 </div>
                 <div className="modal-body">
-                    <p>{this.props.book.author}</p>
-                    <p>{this.props.book.desc}</p>
+                    <p>{this.props.author}</p>
+                    <p>{this.props.desc}</p>
                 </div>
                 <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" onClick={this.props.onHide}>
                         Close
                     </button>
                 </div>
-          </Modal>
+            </Modal>
         );
     }
 }

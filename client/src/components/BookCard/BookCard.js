@@ -24,16 +24,16 @@ class BookCard extends Component {
         return (
             <div className="book">
                 <img
-                    src={this.props.book.book_image}
+                    src={this.props.bookImage}
                     alt={""}
                     className="book-cover"
                     width="300"
                     height="400px" />
                 <div className="book-info">
                     <p className="book-name">
-                        {this.props.book.title}
+                        {this.props.title}
                     </p>
-                    <p className="book-author">{this.props.book.author}</p>
+                    <p className="book-author">{this.props.author}</p>
                     <Button
                         bsStyle="primary"
                         // onClick={() => this.setState({ modalShow: true })}
