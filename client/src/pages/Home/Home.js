@@ -9,17 +9,16 @@ import "./Home.css";
 
 const Home = () => (
   <div>
-    <h2 className="heading">Home Page </h2>
-        <Col size="md-12">
-          <Browsebtn />
-          <Donatebtn /> 
-        </Col>
+    <Col size="md-12">
+      <Browsebtn />
+      <Donatebtn />
+    </Col>
   </div>
 );
-     
-     
-  
-  
-    
+
+
+
+
+
 
 export default Home;
