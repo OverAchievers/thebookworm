@@ -55,7 +55,7 @@ class Browse extends Component {
           {this.state.books.length ? (
             <Col size="md-12 lg-12">
               {this.state.books.map(book => (
-                <BookCard book={book} key={book._id}></BookCard>
+                <BookCard book={book} key={book._id} source={"browse"}></BookCard>
               ))}
             </Col>
           ) : (

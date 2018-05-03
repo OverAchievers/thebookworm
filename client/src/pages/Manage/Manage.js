@@ -2,48 +2,58 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
-import BookCard from "../../components/BookCard";
 import UserIcon from "../../components/UserIcon";
-import NateCard from "../../components/NateCard";
-import "./Manage.css";
-import books from "../../books.json"; // This is for Temporary Cards
+import BookCard from "../../components/BookCard";
+
 
 class Manage extends Component {
   state = {
-    books
+    books : []
   };
 
-  removeBook = id => {
-    // Filter this.state.books for books with an id not equal to the id being removed
-    const books = this.state.books.filter(book => book.id !== id);
-    // Set this.state.books equal to the new books array
-    this.setState({ books });
-  };
+componentDidMount(){
+  this.loadBooks()
+};
 
-  // componentDidMount() {
-  // }
+loadBooks = userId => {
+  API.getUserBooks("5ae7c15591c8bf04aefc9be8")
+  .then(res => {
+    this.setState({books:res.data})
+  })
+  .catch(err => console.log(err));
+};
 
-  render() {
-    return (
-      <Container fluid>
-        <Row>
-          <Col size="ml-10">
-            <span className="pageTitle">Manage Your Books</span>
-            <UserIcon />
+// handleInputChange = event => {
+//   const { name, value } = event.target;
+//   this.setState({
+//     [name]: value
+//   });
+// };
+
+
+render() {
+  return (
+    <Container fluid>
+      <Row>
+        <Col size="lg-12 md-12 sm-12">
+          <hr></hr>
+        </Col>
+      </Row>
+      <Row>
+        {this.state.books.length ? (
+          <Col size="md-12 lg-12">
             {this.state.books.map(book => (
-               <BookCard
-                 removeBook={this.removeBook}
-                 id={book.id}
-                 key={book.id}
-                 author={book.author}
-                 title={book.title}
-                />
+              <BookCard book={book} key={book._id}></BookCard>
             ))}
           </Col>
-        </Row>
-      </Container>
-    );
-  }
+        ) : (
+          <h3>No Results to Display</h3>
+        )}
+      </Row>
+      <div className="push"></div>
+    </Container>
+  );
+}
 }
 
 export default Manage;

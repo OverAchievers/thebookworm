@@ -8,18 +8,26 @@ import "./Home.css";
 
 
 const Home = () => (
-  <div>
-    <h2 className="heading">Home Page </h2>
-        <Col size="md-12">
-          <Browsebtn />
-          <Donatebtn /> 
-        </Col>
-  </div>
-);
-     
-     
-  
-  
+  <Container fluid>
+    <Row id="button-row">
+     <Container>
+        <h2 className="heading"> Home Page
+           </h2>
+           </Container>
     
+          <Browsebtn />
+         
+
+          
+          <Donatebtn /> 
+        </Row>
+  </Container>
+
+);
+
+
+
+
+
 
 export default Home;

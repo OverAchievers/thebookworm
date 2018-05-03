@@ -88,6 +88,15 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
   },
+  getUser: function(req, res){
+    db.Book
+    .find({user:req.params.user})
+    .sort({date:-1})
+    .then(dbModel=> {
+      res.json(dbModel);
+    })
+    .catch(err => res.status(422).json(err));
+  },
   update: function (req, res) {
     console.log("in update");
     db.Book

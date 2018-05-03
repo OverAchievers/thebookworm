@@ -16,11 +16,18 @@ export default {
     } else {
       return axios.get("/api/books?" + searchContext + "=" + searchString);
     }
+<<<<<<< HEAD
   },
   donateBook: function (bookData) {
     console.log("bookData");
     return axios.post("/api/books", bookData, {
       headers: { 'Content-Type': 'application/json' }
     });
+=======
+
+  },
+  getUserBooks: function(userId){
+    return axios.get("/api/books/user/"+userId);
+>>>>>>> master
   }
 };

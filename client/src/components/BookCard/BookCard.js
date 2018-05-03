@@ -41,7 +41,11 @@ class BookCard extends Component {
                         Details
                     </Button>
                 </div>
-                <BookBrowseModal visible={this.state.browseModalShow} onClickBackdrop={browseModalClose} book={this.props.book} />
+                {this.props.source === "browse" ? (
+                    <BookBrowseModal visible={this.state.browseModalShow} onClickBackdrop={browseModalClose} book={this.props.book} />
+                  ) : (
+                    <BookBrowseModal visible={this.state.browseModalShow} onClickBackdrop={browseModalClose} book={this.props.book} />
+                )}               
             </div>
         );
     }
