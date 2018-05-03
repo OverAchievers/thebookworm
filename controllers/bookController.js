@@ -1,10 +1,13 @@
 const db = require("../models");
 const axios = require("axios");
 
+
 // Defining methods for the userController
 module.exports = {
   create: function (req, res) {
     console.log("in create function");
+
+
     db.Book
       .create(req.body)
       .then(dbModel => res.json(dbModel))
@@ -21,7 +24,7 @@ module.exports = {
           res.json(dbModel);
         })
         .catch(err => res.status(422).json(err));
-      } else {
+    } else {
       const any = req.query.any;
       const zipcode = req.query.zipcode;
       const title = req.query.title;
@@ -30,23 +33,23 @@ module.exports = {
       const desc = req.query.desc;
 
       let search = {};
-      if(any !== undefined){
+      if (any !== undefined) {
         let orSearch = [];
-        orSearch.push({"zipcode" : { $regex: new RegExp(".*" + any + ".*", "i") }});
-        orSearch.push({"title" : { $regex: new RegExp(".*" + any + ".*", "i") }});
-        orSearch.push({"author" : { $regex: new RegExp(".*" + any + ".*", "i") }});
-        orSearch.push({"isbn" : { $regex: new RegExp(".*" + any + ".*", "i") }});
+        orSearch.push({ "zipcode": { $regex: new RegExp(".*" + any + ".*", "i") } });
+        orSearch.push({ "title": { $regex: new RegExp(".*" + any + ".*", "i") } });
+        orSearch.push({ "author": { $regex: new RegExp(".*" + any + ".*", "i") } });
+        orSearch.push({ "isbn": { $regex: new RegExp(".*" + any + ".*", "i") } });
         // orSearch.push({"desc" : { $regex: new RegExp(".*" + any + ".*", "i") }});
         console.log(orSearch);
         db.Book
-        .find()
-        .or(orSearch)
-        .sort({ date: -1 })
-        .then(dbModel => {
-          res.json(dbModel);
-        })
-        .catch(err => res.status(422).json(err));
-      } else{
+          .find()
+          .or(orSearch)
+          .sort({ date: -1 })
+          .then(dbModel => {
+            res.json(dbModel);
+          })
+          .catch(err => res.status(422).json(err));
+      } else {
         if (zipcode !== undefined) {
           search.zipcode = zipcode;
         }
@@ -62,7 +65,7 @@ module.exports = {
         if (desc !== undefined) {
           search.desc = { $regex: new RegExp(".*" + desc + ".*", "i") };
         }
-  
+
         db.Book
           .find(search)
           .sort({ date: -1 })
@@ -75,15 +78,15 @@ module.exports = {
     }
 
   },
-  get: function(req, res){
+  get: function (req, res) {
     db.Book
-    .find({ _id: req.params.id })
-    .sort({ date: -1 })
-    .then(dbModel => {
-      console.log(dbModel);
-      res.json(dbModel);
-    })
-    .catch(err => res.status(422).json(err));
+      .find({ _id: req.params.id })
+      .sort({ date: -1 })
+      .then(dbModel => {
+        console.log(dbModel);
+        res.json(dbModel);
+      })
+      .catch(err => res.status(422).json(err));
   },
   update: function (req, res) {
     console.log("in update");

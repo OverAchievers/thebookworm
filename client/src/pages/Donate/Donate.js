@@ -65,9 +65,7 @@ class Donate extends Component {
       notes: null,
       user: null
     }; console.log(bookData);
-    API.donateBook(
-      bookData
-    )
+    API.donateBook(bookData)
       .catch(err => console.log(err));
   }
 
