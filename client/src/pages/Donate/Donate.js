@@ -53,21 +53,22 @@ class Donate extends Component {
 
   postBookDB = event => {
     event.preventDefault();
-    const bookData = {
-      isbn: this.state.isbn,
-      title: this.state.title,
-      subtitle: this.state.subtitle,
-      author: this.state.author,
-      desc: this.state.desc,
-      book_image: this.state.book_image,
-      pages: this.state.pages,
-      condition: null,
-      notes: null,
-      user: null
-    }; console.log(bookData);
-    API.donateBook(bookData)
-      .catch(err => console.log(err));
-  }
+    if (this.state.title) {
+      API.donateBook({
+        isbn: this.state.isbn,
+        title: this.state.title,
+        subtitle: this.state.subtitle,
+        author: this.state.author,
+        desc: this.state.desc,
+        book_image: this.state.book_image,
+        pages: this.state.pages,
+        condition: null,
+        notes: null,
+        user: null
+      })
+        .catch(err => console.log(err));
+    }
+  };
 
 
   render() {

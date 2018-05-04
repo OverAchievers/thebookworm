@@ -18,9 +18,7 @@ export default {
     }
   },
   donateBook: function (bookData) {
-    console.log("bookData");
-    return axios.post("/api/books", bookData, {
-      headers: { 'Content-Type': 'application/json' }
-    });
+    console.log(bookData);
+    return axios.post("/api/books", bookData);
   }
 };
