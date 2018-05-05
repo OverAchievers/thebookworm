@@ -2,18 +2,18 @@ import "./BookCard.css";
 import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 //Libraries from react-bootstrap (npm install --save react-bootstrap )
-import Button from 'react-bootstrap/lib/Button';
+import Button from "react-bootstrap/lib/Button";
 import BookBrowseModal from "../../components/BookBrowseModal";
 import BookManageModal from "../../components/BookManageModal";
 
 class BookCard extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.state = {
-            browseModalShow: false,
-            manageModalShow: false
-        };
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      browseModalShow: false,
+      manageModalShow: false
     };
+
 tryStuff = () => {
   this.props.source === "browse" ?
   (
