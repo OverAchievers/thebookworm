@@ -14,6 +14,7 @@ import API from "../../utils/API";
 class BookManageModal extends Component {
   deleteBook = id => {
     API.deleteBook(id)
+    .then(console.log("working"))
       .catch(err => console.log(err));
   };
     render() {

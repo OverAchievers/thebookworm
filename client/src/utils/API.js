@@ -22,6 +22,6 @@ export default {
     return axios.get("/api/books/user/"+userId);
   },
   deleteBook: function(id){
-    return axios.get("/api/books/id/" +id);
+    return axios.delete("/api/books/" +id);
   }
 };
