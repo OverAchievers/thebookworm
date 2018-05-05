@@ -7,16 +7,22 @@ import { Col, Row, Container } from "../../components/Grid";
 //Libraries from react-bootstrap (npm install --save react-bootstrap4-modal )
 import Modal from 'react-bootstrap4-modal';
 import Button from 'react-bootstrap/lib/Button';
-import DeleteBtn from "../../components/DeleteBtn";
-import Manage from "../../pages/Manage";
 import API from "../../utils/API";
+import Manage from "../../pages/Manage";
+
 
 class BookManageModal extends Component {
   deleteBook = id => {
     API.deleteBook(id)
-    .then(console.log("working"))
+    .then(res => {
+      console.log("working");
+      this.props.onClickDelete();
+    })
       .catch(err => console.log(err));
   };
+  // logging  = () =>{
+  //   console.log("working");
+  // }
     render() {
 
         return (
@@ -33,8 +39,10 @@ class BookManageModal extends Component {
                     <button type="button" className="btn btn-secondary" onClick={this.props.onClickBackdrop}>
                         Close
                     </button>
-            <DeleteBtn onClick={this.deleteBook(this.props.book._id)} />
-                    <button type="button" className="btn btn-secondary" onClick={this.props.onHide}>
+                    <button type="button" className="btn btn-secondary" onClick={()=>{this.deleteBook(this.props.book._id)}}>
+                      Delete
+                    </button>
+                    <button type="button" className="btn btn-secondary">
                         Edit
                     </button>
                 </div>

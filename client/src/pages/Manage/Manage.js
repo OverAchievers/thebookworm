@@ -4,7 +4,6 @@ import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
 import UserIcon from "../../components/UserIcon";
 import BookCard from "../../components/BookCard";
-import DeleteBtn from "../../components/DeleteBtn";
 
 
 class Manage extends Component {
@@ -18,18 +17,18 @@ componentDidMount(){
 
 
 loadBooks = userId => {
-  API.getUserBooks("5aedca116521850c59d4a681")
+  API.getUserBooks("5aee048d04041f0e333398d6")
   .then(res => {
     this.setState({books:res.data})
   })
   .catch(err => console.log(err));
 };
 
-deleteBook = id => {
-  API.deleteBook(id)
-    .then(res => this.loadBooks())
-    .catch(err => console.log(err));
-};
+// deleteBook = id => {
+//   API.deleteBook(id)
+//     .then(res => this.loadBooks())
+//     .catch(err => console.log(err));
+// };
 
 // handleInputChange = event => {
 //   const { name, value } = event.target;
@@ -52,7 +51,7 @@ render() {
           <Col size="md-12 lg-12">
             {this.state.books.map(book => (
               <div>
-              <BookCard book={book} key={book._id} source={"manage"}>
+              <BookCard book={book} key={book._id} source={"manage"} reload={this.loadBooks}>
 
               </BookCard>
               </div>
