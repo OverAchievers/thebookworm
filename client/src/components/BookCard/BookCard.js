@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../../components/Grid";
 //Libraries from react-bootstrap (npm install --save react-bootstrap )
 import Button from 'react-bootstrap/lib/Button';
 import BookBrowseModal from "../../components/BookBrowseModal";
+import BookManageModal from "../../components/BookManageModal";
 
 class BookCard extends Component {
     constructor(props, context) {
@@ -13,7 +14,13 @@ class BookCard extends Component {
             manageModalShow: false
         };
     };
-
+tryStuff = () => {
+  this.props.source === "browse" ?
+  (
+    this.setState({browseModalShow:true})
+    ) : (
+    this.setState({manageModalShow:true})
+  )};
     render() {
 
         let browseModalOpen = () => this.setState({ browseModalShow: true });
@@ -37,18 +44,19 @@ class BookCard extends Component {
                     <Button
                         bsStyle="primary"
                         // onClick={() => this.setState({ modalShow: true })}
-                        onClick={browseModalOpen}>
+                        onClick={this.tryStuff}>
                         Details
                     </Button>
+
                 </div>
                 {this.props.source === "browse" ? (
-                    <BookBrowseModal visible={this.state.browseModalShow} onClickBackdrop={browseModalClose} book={this.props.book} />
-                  ) : (
-                    <BookBrowseModal visible={this.state.browseModalShow} onClickBackdrop={browseModalClose} book={this.props.book} />
-                )}               
+                   <BookBrowseModal visible={this.state.browseModalShow} onClickBackdrop={browseModalClose} book={this.props.book} />
+                 ) : (
+                   <BookManageModal visible={this.state.manageModalShow} onClickBackdrop={manageModalClose} book={this.props.book} />
+               )}
             </div>
         );
     }
-}
+};
 
 export default BookCard;
