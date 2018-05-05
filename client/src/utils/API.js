@@ -29,5 +29,8 @@ export default {
   },
   createUser: function(user){
     return axios.post("/api/users", user);
+  },
+  deleteBook: function(id){
+    return axios.get("/api/books/id/" +id);
   }
 };
