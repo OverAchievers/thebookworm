@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-import BookCard from "../../components/BookCard";
 import API from "../../utils/API";
+import UserIcon from "../../components/UserIcon";
+import BookCard from "../../components/BookCard";
+
 
 class Manage extends Component {
   state = {
@@ -10,11 +12,11 @@ class Manage extends Component {
   };
 
 componentDidMount(){
-  this.loadBooks();
+  this.loadBooks()
 };
 
 loadBooks = userId => {
-  API.getUserBooks("5aea5ade6248920a857a92af")
+  API.getUserBooks("5ae7c15591c8bf04aefc9be8")
   .then(res => {
     this.setState({books:res.data})
   })
@@ -41,7 +43,7 @@ render() {
         {this.state.books.length ? (
           <Col size="md-12 lg-12">
             {this.state.books.map(book => (
-              <BookCard book={book} key={book._id} source={"manage"}></BookCard>
+              <BookCard book={book} key={book._id}></BookCard>
             ))}
           </Col>
         ) : (
@@ -51,6 +53,7 @@ render() {
       <div className="push"></div>
     </Container>
   );
-};
-};
+}
+}
+
 export default Manage;
