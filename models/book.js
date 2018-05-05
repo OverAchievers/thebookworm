@@ -12,7 +12,7 @@ const bookSchema = new Schema({
   },
   subtitle: {
     type: String,
-    required: false
+    required: true
   },
   author: {
     type: String,

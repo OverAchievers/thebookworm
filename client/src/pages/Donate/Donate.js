@@ -2,113 +2,49 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
+import DonateInputBox from "../../components/DonateInputBox";
 import BookCard from "../../components/BookCard";
-import IsbnSearch from "../../components/IsbnSearch";
-import Barcode from "react-barcode";
+
 
 class Donate extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      search: "",
-      error: "",
-      isbn: "",
-      title: "",
-      subtitle: "",
-      author: "",
-      desc: "",
-      bookImage: "",
-      pages: "",
-      condition: "",
-      notes: "",
-      user: "",
-      isbnClicked: false
-    };
-    this.searchClicked = this.searchClicked.bind(this);
-  }
-
-  searchClicked() {
-    this.setState({
-      isbnClicked: true
-    });
-  }
-
-  searchClick = event => {
-    event.preventDefault();
-    this.handleFormSubmit();
-    this.searchClicked();
+  state = {
+    search: "",
+    results: [],
+    error: ""
   };
 
   componentDidMount() {}
-
-  editThumbnail() {
-    this.setState;
-  }
 
   handleInputChange = event => {
     this.setState({ search: event.target.value });
   };
 
   handleFormSubmit = event => {
-    API.getBook(this.state.search)
-      .then(response =>
-        this.setState({
-          isbn:
-            response.data.items[0].volumeInfo.industryIdentifiers[0].identifier,
-          title: response.data.items[0].volumeInfo.title,
-          subtitle: response.data.items[0].volumeInfo.subtitle,
-          author: response.data.items[0].volumeInfo.authors,
-          desc: response.data.items[0].volumeInfo.description,
-          bookImage: response.data.items[0].volumeInfo.imageLinks.thumbnail.replace(
-            "zoom=1",
-            "zoom=2"
-          ),
-          pages: response.data.items[0].volumeInfo.pageCount
-        })
-      )
-      .catch(err => console.log(err));
-  };
-
-  postBookDB = event => {
     event.preventDefault();
-    if (this.state.title) {
-      API.donateBook({
-        isbn: this.state.isbn,
-        title: this.state.title,
-        subtitle: this.state.subtitle,
-        author: this.state.author,
-        desc: this.state.desc,
-        bookImage: this.state.bookImage,
-        pages: this.state.pages,
-        condition: null,
-        notes: null,
-        user: null
-      }).catch(err => console.log(err));
-    }
+    API.getBook(this.state.search)
+      .then(res => {
+        if (res.data.status === "error") {
+          throw new Error(res.data.message);
+        }
+        this.setState({ results: res.data.message, error: "" });
+      })
+      .catch(err => this.setState({ error: err.message }));
   };
 
   render() {
     return (
-      <div>
-        <Container fluid>
-          <h1>Donate Page</h1>
-          <IsbnSearch
-            handleFormSubmit={this.searchClick}
-            handleInputChange={this.handleInputChange}
-          />
-          {this.state.isbnClicked ? (
+      <Container fluid>
+        <Row>
+          <Col size="ml-6">
+            <h1>Donate Page</h1>
+            <DonateInputBox />
             <BookCard
-              bookImage={this.state.bookImage}
-              author={this.state.author}
-              title={this.state.title}
-              buttonTitle={"Donate Book"}
-              buttonClick={this.postBookDB}
+              handleFormSubmit={this.handleFormSubmit}
+              handleInputChange={this.handleInputChange}
             />
-          ) : null}
-          <Barcode value={this.state.search} />
-        </Container>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

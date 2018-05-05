@@ -11,18 +11,14 @@ export default {
   },
   // Gets the book with the given id
   searchBook: function(searchString, searchContext) {
-    if (searchString === null) {
+    if(searchString === null){
       return axios.get("/api/books");
-    } else {
-      return axios.get("/api/books?" + searchContext + "=" + searchString);
+    } else{
+      return axios.get("/api/books?"+ searchContext + "=" + searchString);
     }
-  },
-  getUserBooks: function(userId) {
-    return axios.get("/api/books/user/" + userId);
-  },
 
-  donateBook: function(bookData) {
-    console.log(bookData);
-    return axios.post("/api/books", bookData);
+  },
+  getUserBooks: function(userId){
+    return axios.get("/api/books/user/"+userId);
   }
 };
