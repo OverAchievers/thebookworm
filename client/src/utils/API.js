@@ -21,6 +21,15 @@ export default {
   getUserBooks: function(userId){
     return axios.get("/api/books/user/"+userId);
   },
+  searchUser: function(userId){
+    return axios.get("/api/books/user/"+userId);
+  },
+  searchUserByEmail: function(userEmail){
+    return axios.get("/api/users?email="+userEmail);
+  },
+  createUser: function(user){
+    return axios.post("/api/users", user);
+  },
   deleteBook: function(id){
     return axios.get("/api/books/id/" +id);
   }
