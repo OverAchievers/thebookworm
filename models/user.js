@@ -8,7 +8,7 @@ const userSchema = new Schema({
     },
     last_name: {
         type: String,
-        required: true
+        required: false
     },
     email: {
         type: String,
@@ -20,7 +20,7 @@ const userSchema = new Schema({
     },
     phone: {
         type: String,
-        required: true
+        required: false
     },
     share_phone: {
         type: Boolean,
@@ -38,7 +38,7 @@ const userSchema = new Schema({
         },
         zipcode: {
             type: String,
-            required: true
+            required: false
         },
         city: {
             type: String,
