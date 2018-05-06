@@ -4,7 +4,7 @@ import { GoogleLogout } from 'react-google-login';
 import "./Nav.css";
 import API from "../../utils/API";
 // import { Redirect } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Button from 'react-bootstrap/lib/Button';
 
 class Nav extends Component {
@@ -22,7 +22,7 @@ class Nav extends Component {
         redirect: false,
         redirectUrl: null
       };
-    } else if (sessionStorage.getItem("userSessionEntity") === null && page != "/" && page != "") {
+    } else if (sessionStorage.getItem("userSessionEntity") === null && page !== "/" && page !== "") {
       this.state = {
         loggedIn: false,
         redirect: true,
@@ -82,8 +82,10 @@ class Nav extends Component {
           //If does not exists 
           //Insert user into user table
           var user = {};
+          console.log(googleUser);
           user.email = googleUser.getBasicProfile().getEmail();
-          user.first_name = googleUser.getBasicProfile().getName();
+          user.first_name = googleUser.getBasicProfile().getGivenName();
+          user.last_name = googleUser.getBasicProfile().getFamilyName();
           user.profile_image = googleUser.getBasicProfile().getImageUrl();
           API.createUser(user)
             .then(res => {

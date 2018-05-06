@@ -30,6 +30,10 @@ export default {
   createUser: function(user){
     return axios.post("/api/users", user);
   },
+  updateUser: function(user){
+    console.log(user);
+    return axios.put("/api/users/" + user._id, user);
+  },
   deleteBook: function(id){
     return axios.get("/api/books/id/" +id);
   }
