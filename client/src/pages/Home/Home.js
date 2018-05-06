@@ -1,30 +1,56 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
-import API from "../../utils/API";
+import { Row, Container } from "../../components/Grid";
 import Donatebtn from "../../components/Donatebtn";
 import Browsebtn from "../../components/Browsebtn";
 import "./Home.css";
+import { Redirect } from "react-router-dom";
 
+class Home extends Component {
+  constructor(props, context) {
+    super(props, context);
+  
+    this.state={
+      redirect: false,
+      redirectUrl: null
+    }
+  };
 
-const Home = () => (
-  <Container fluid>
-    <Row id="button-row">
-     <Container>
-        <h2 className="heading"> Home Page
-           </h2>
-           </Container>
-    
-          <Browsebtn />
-         
+  redirectTo = (url) => {
+    console.log("in redirectTo");
+    this.setState({
+      redirect: true,
+      redirectUrl: url
+    });
+  };
+  
+  renderRedirect = () => {
+    console.log("in renderRedirect");
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirectUrl} />
+    }
+  };
 
-          
-          <Donatebtn /> 
-        </Row>
-  </Container>
+  render() {
+    return (
+      <Container fluid>
+        {this.renderRedirect()}
+        <Row id="button-row">
+        <Container>
+            <h2 className="heading"> Home Page
+              </h2>
+              </Container>
+        
+              <Browsebtn whenClicked={this.redirectTo}/>
+            
 
-);
+              
+              <Donatebtn whenClicked={this.redirectTo}/> 
+            </Row>
+      </Container>
+    )
+  }
 
+}
 
 
 

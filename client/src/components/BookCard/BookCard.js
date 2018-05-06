@@ -1,6 +1,5 @@
 import "./BookCard.css";
 import React, { Component } from "react";
-import { Col, Row, Container } from "../../components/Grid";
 //Libraries from react-bootstrap (npm install --save react-bootstrap )
 import Button from 'react-bootstrap/lib/Button';
 import BookBrowseModal from "../../components/BookBrowseModal";
@@ -50,7 +49,7 @@ class BookCard extends Component {
                     </Button>
                 </div>
                 {this.props.source === "browse" ? (
-                    <BookBrowseModal visible={this.state.browseModalShow} onClickBackdrop={browseModalClose} book={this.props.book} />
+                    <BookBrowseModal visible={this.state.browseModalShow} onClickBackdrop={browseModalClose} onClose={browseModalClose} book={this.props.book} />
                   ) : (
                     <BookManageModal visible={this.state.manageModalShow} onClickBackdrop={manageModalClose} book={this.props.book} />
                 )}
