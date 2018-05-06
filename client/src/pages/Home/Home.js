@@ -16,15 +16,15 @@ class Home extends Component {
   };
 
   redirectTo = (url) => {
-    console.log("in redirectTo");
-    this.setState({
-      redirect: true,
-      redirectUrl: url
-    });
+    if(sessionStorage.getItem("userSessionEntity") !== null){
+      this.setState({
+        redirect: true,
+        redirectUrl: url
+      });
+    }
   };
   
   renderRedirect = () => {
-    console.log("in renderRedirect");
     if (this.state.redirect) {
       return <Redirect to={this.state.redirectUrl} />
     }
