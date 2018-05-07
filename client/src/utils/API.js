@@ -42,7 +42,8 @@ export default {
   },
 
   deleteBook: function (id) {
-    return axios.get("/api/books/id/" + id);
+    console.log(id);
+    return axios.delete("/api/books/" + id);
 
   }
 };

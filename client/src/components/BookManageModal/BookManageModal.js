@@ -15,7 +15,7 @@ class BookManageModal extends Component {
   deleteBook = id => {
     API.deleteBook(id)
     .then(res => {
-      console.log("working");
+      console.log("working", this);
       this.props.onClickDelete();
     })
       .catch(err => console.log(err));

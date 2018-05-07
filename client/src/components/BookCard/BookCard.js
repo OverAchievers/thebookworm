@@ -44,7 +44,7 @@ class BookCard extends Component {
 
       return (
         <div className="book">
-        {this.renderRedirect()}
+        // {this.renderRedirect()}
         <img
         src={this.props.book.book_image}
         alt={""}
