@@ -15,6 +15,7 @@ module.exports = {
     if (isEmpty(req.query)) {
       db.Book
         .find()
+        .populate({ path: "user"})
         .sort({ date: -1 })
         .then(dbModel => {
           console.log(dbModel);
@@ -41,6 +42,7 @@ module.exports = {
         db.Book
         .find()
         .or(orSearch)
+        .populate({ path: "user"})
         .sort({ date: -1 })
         .then(dbModel => {
           res.json(dbModel);

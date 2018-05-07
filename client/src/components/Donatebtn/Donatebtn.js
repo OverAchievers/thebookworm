@@ -7,7 +7,7 @@ const Donatebtn = props => (
 	
 		<div className="div-class">
 		 <h4 className="donate-para">Want to donate a book?</h4>
-		<a className="donate">
+		<a className="donate" onClick={() => props.whenClicked('/donate')}>
 		<img
 		    src={"https://media.giphy.com/media/8Ds39S2EsepEs/giphy.gif"}
 		    alt={"Book gif"}

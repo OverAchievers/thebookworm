@@ -1,7 +1,7 @@
 import "./BookCard.css";
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
+
 //Libraries from react-bootstrap (npm install --save react-bootstrap )
 import Button from 'react-bootstrap/lib/Button';
 import BookBrowseModal from "../../components/BookBrowseModal";
@@ -41,6 +41,7 @@ class BookCard extends Component {
         this.props.reload();
       }
 
+
       return (
         <div className="book">
         {this.renderRedirect()}
@@ -69,6 +70,7 @@ class BookCard extends Component {
         )}
         </div>
       );
+
     }
   }
 
