@@ -136,35 +136,35 @@ class Nav extends Component {
         <h1 className="brand">The Book Worm</h1>
         {
           this.state.loggedIn === true ? (
-            <Button className="btn float-right login" onClick={() => this.redirectTo('/browse')}>Browse</Button>
+            <Button className="btn btn-responsive float-right login row"  onClick={() => this.redirectTo('/browse')}>Browse</Button>
           ) : (null)
         }
         {
           this.state.loggedIn === true ? (
-            <button className="btn float-right login"  onClick={() => this.redirectTo('/donate')}>Donate</button>
+            <button className="btn btn-responsive float-right login row"  onClick={() => this.redirectTo('/donate')}>Donate</button>
           ) : (null)
         }
         {
           this.state.loggedIn === true ? (
-            <button className="btn float-right login"  onClick={() => this.redirectTo('/manage')}>Manage</button>
+            <button className="btn btn-responsive float-right login row"  onClick={() => this.redirectTo('/manage')}>Manage</button>
           ) : (null)
         }
         {
           this.state.loggedIn === true ? (
-            <button className="btn float-right login"  onClick={() => this.redirectTo('/profile')}>Profile</button>
+            <button className="btn btn-responsive float-right login row"  onClick={() => this.redirectTo('/profile')}>Profile</button>
           ) : (null)
         }
         {
           this.state.loggedIn === false ? (
             <GoogleLogin
-              className="login-btn btn float-right login"
+              className="login-btn btn btn-responsive  float-right login row"
               clientId="517497834549-3j7earnjbedaa8ntbt4cf5iqblnr4nfh.apps.googleusercontent.com"
               buttonText="Login"
               onSuccess={this.handlePostGoogleLogin}
               onFailure={this.handleGoogleLoginFailure}
             />) : (
               <GoogleLogout
-                className="login-btn btn float-right login"
+                className="login-btn btn btn-responsive float-right login row"
                 clientId="517497834549-3j7earnjbedaa8ntbt4cf5iqblnr4nfh.apps.googleusercontent.com"
                 buttonText="Logout"
                 onLogoutSuccess={this.handlePostGoogleLogout}

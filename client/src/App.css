@@ -16,7 +16,19 @@ body {
         font-size: 2rem;
     }
 
-    .button-container{
+    .btn {
+
+    }
+
+    .btn-responsive {
+        padding: 2px 4px;
+        font-size: 80%;
+        line-height: 1;
+        margin-right: 3%;
+        /* margin-top: 13%; */
+    }
+
+    .button-container {
         margin-left: 15%;
     }
 
@@ -27,6 +39,7 @@ body {
     .Footer {
         bottom: 0;
         font-size: .1em;
+        position: fixed;
     }
 
     .footerTitle {
@@ -42,6 +55,15 @@ body {
     }
 
     .navbar {
-        height: 5rem;
+        height: 5.5rem;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 992px) {
+    .btn-responsive {
+        padding: 4px 9px;
+        font-size: 90%;
+        line-height: 1.2;
+        margin-right: 3%;
     }
 }
