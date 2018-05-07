@@ -2,9 +2,9 @@
   	
   	background-color: none;
   	border-radius: 50%;
-  	width:40%; 
-	margin-left:10%;
-	margin-top: 18px;
+  	width: 100px; 
+	margin-left: 10%;
+	margin-top: 10px;
 
 }
 .div-class{
@@ -16,11 +16,12 @@ margin-top: 3%;
 .donate-para{
 	color: #EB6864;
 	text-align: center;
-	margin-right: 38%;
+	/* margin-right: 38%; */
+	/* margin-bottom: 15px;   */
 }
 .Db{
 	color: #EB6864;
-	margin-top: 10%;
+	margin-top: 12px;
 	margin-left: 18%;	
 	font-weight: bold;
 	font-family: 'Russo One', sans-serif;

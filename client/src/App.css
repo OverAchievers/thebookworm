@@ -16,6 +16,10 @@ body {
         font-size: 2rem;
     }
 
+    .button-container{
+        margin-left: 15%;
+    }
+
     .card {
         margin-left: 20%;
     }
@@ -31,6 +35,10 @@ body {
 
     .iconContainer {
         margin: 3% 0 10% 30%;
+    }
+
+    .heading {
+        margin-left: 25%;
     }
 
     .navbar {
