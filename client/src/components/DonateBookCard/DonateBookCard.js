@@ -9,51 +9,26 @@ class DonateBookCard extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      browseModalShow: false,
-      manageModalShow: false
     };
   }
 
   render() {
     return (
-      <div>
-        <div className="book">
-          <img
-            src={this.props.bookImage}
-            alt={""}
-            className="book-cover"
-            width="300"
-            height="400px"
-          />
-          <div className="book-info">
-            <p className="book-name">{this.props.title}</p>
-            <p className="book-author">{this.props.author}</p>
-            <Button bsStyle="primary" onClick={this.props.buttonClick}>
-              {this.props.buttonTitle}
-            </Button>
-          </div>
+      <div className="book">
+        <img
+          src={this.props.book_image}
+          alt={""}
+          className="book-cover"
+          width="300"
+          height="400px"
+        />
+        <div className="book-info">
+          <p className="book-name">{this.props.title}</p>
+          <p className="book-author">{this.props.author}</p>
+          <Button bsStyle="primary" onClick={this.props.buttonClick}>
+            {this.props.buttonTitle}
+          </Button>
         </div>
-        <form>
-          <div className="form-group">
-            <label for="condition">Condition</label>
-            <select className="form-control" id="exampleFormControlSelect1">
-              <option>New</option>
-              <option>Used - Like New</option>
-              <option>Used - Very Good</option>
-              <option>Used - Good</option>
-              <option>Used - Acceptable</option>
-              <option>Unacceptable</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label for="exampleFormControlTextarea1">Notes</label>
-            <textarea
-              className="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-            />
-          </div>
-        </form>
       </div>
     );
   }

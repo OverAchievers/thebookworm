@@ -5,6 +5,7 @@ import API from "../../utils/API";
 import DonateBookCard from "../../components/DonateBookCard";
 import IsbnSearch from "../../components/IsbnSearch";
 import Barcode from "react-barcode";
+import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class Donate extends Component {
   constructor() {
@@ -18,7 +19,7 @@ class Donate extends Component {
       subtitle: "",
       author: "",
       desc: "",
-      bookImage: "",
+      book_image: "",
       pages: "",
       condition: "",
       notes: "",
@@ -37,7 +38,7 @@ class Donate extends Component {
       subtitle: "",
       author: "",
       desc: "",
-      bookImage: "",
+      book_image: "",
       pages: "",
       condition: "",
       notes: "",
@@ -58,14 +59,26 @@ class Donate extends Component {
     this.searchClicked();
   };
 
-  componentDidMount() {}
+  currentUserId() {
+    let userId = JSON.parse(sessionStorage.userSessionEntity);
+    this.setState({
+      user: userId.id
+    })
+  };
 
-  editThumbnail() {
-    this.setState;
+  componentDidMount() {
+    this.currentUserId();
   }
 
   handleInputChange = event => {
     this.setState({ search: event.target.value });
+  };
+
+  handleTextConditionChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
   };
 
   handleFormSubmit = event => {
@@ -78,9 +91,8 @@ class Donate extends Component {
           subtitle: response.data.items[0].volumeInfo.subtitle,
           author: response.data.items[0].volumeInfo.authors,
           desc: response.data.items[0].volumeInfo.description,
-          bookImage:
-            response.data.items[0].volumeInfo.imageLinks.thumbnail +
-            "&fife=w200-h300",
+          book_image:
+            response.data.items[0].volumeInfo.imageLinks.thumbnail + "&fife=w200-h300",
           pages: response.data.items[0].volumeInfo.pageCount
         })
       )
@@ -96,11 +108,11 @@ class Donate extends Component {
         subtitle: this.state.subtitle,
         author: this.state.author,
         desc: this.state.desc,
-        bookImage: this.state.bookImage,
+        book_image: this.state.book_image,
         pages: this.state.pages,
-        condition: null,
-        notes: null,
-        user: null
+        condition: this.state.condition,
+        notes: this.state.notes,
+        user: this.state.user
       })
         .then(res => this.clearState())
         .catch(err => console.log(err));
@@ -118,13 +130,27 @@ class Donate extends Component {
           />
           {this.state.isbnClicked ? (
             <DonateBookCard
-              bookImage={this.state.bookImage}
+              book_image={this.state.book_image}
               author={this.state.author}
               title={this.state.title}
               buttonTitle={"Donate Book"}
               buttonClick={this.postBookDB}
             />
           ) : null}
+          <form>
+            <Input
+              value={this.state.condition}
+              onChange={this.handleTextConditionChange}
+              name="condition"
+              placeholder="Condition (required)"
+            />
+            <TextArea
+              value={this.state.notes}
+              onChange={this.handleTextConditionChange}
+              name="notes"
+              placeholder="Notes (required)"
+            />
+          </form>
           <Barcode value={this.state.search} />
         </Container>
       </div>
