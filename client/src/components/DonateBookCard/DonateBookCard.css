@@ -3,7 +3,6 @@
     margin: 1rem;
     /* Just to show space between the book to the right. */
     position: relative;
-    box-shadow: 5px 5px 7px grey;
 }
 
 .book-cover {
@@ -24,7 +23,25 @@
     text-align: left;
 }
 
+.book-tags {
+    right: 1.5rem;
+    position: absolute;
+    top: -2rem;
+}
 
+.book-tag {
+    background: rgba(100, 0, 200, 0.75);
+    border-radius: 0.25rem 0.25rem 0 0;
+    display: inline-block;
+    font-size: 0.85rem;
+    line-height: 2rem;
+    margin-left: 0.25rem;
+    padding: 0 0.5rem;
+}
+
+.book-tag--year {
+    background: rgba(200, 0, 0, 0.75);
+}
 
 .book-name {
     margin-top: 0;

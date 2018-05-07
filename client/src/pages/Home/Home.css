@@ -9,6 +9,7 @@ margin-left: 22%;
 .donate-btn{
 	 opacity: 1;
  transform: scale(1.10);
+ box-shadow: 5px 5px 7px grey;
 }
 .donate-btn{
 	margin-right: 20%; 
@@ -21,6 +22,7 @@ margin-left: 22%;
 .browsebtn{
 	 opacity: 1;
  transform: scale(1.10);
+ box-shadow: 5px 5px 7px grey;
 }
 
 .div-class{ 
