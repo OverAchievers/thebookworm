@@ -3,9 +3,9 @@ import "./IsbnSearch.css";
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 const IsbnSearch = props => (
-    <form className="search">
-        <div className="form-group">
-            <label htmlFor="isbn">Isbn:</label>
+   
+    <div className="input-group mb-3">
+        <label htmlFor="isbn" className="sr-only">Isbn:</label>
             <input
                 value={props.search}
                 onChange={props.handleInputChange}
@@ -13,18 +13,20 @@ const IsbnSearch = props => (
                 list="isbn"
                 type="text"
                 className="form-control"
-                placeholder="Enter ISBN #"
+                placeholder="Enter Book Title or ISBN Number"
                 id="isbn"
-            />
+                            />
+        <div className="input-group-append">
             <button
                 type="submit"
                 onClick={props.handleFormSubmit}
-                className="btn btn-success"
+                className="btn btn-success btn-sm"
             >
                 Search
-      </button>
+            </button>
         </div>
-    </form>
+    </div>
+    
 );
 
 export default IsbnSearch;

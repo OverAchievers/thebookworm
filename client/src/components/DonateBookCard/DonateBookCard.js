@@ -25,9 +25,6 @@ class DonateBookCard extends Component {
         <div className="book-info">
           <p className="book-name">{this.props.title}</p>
           <p className="book-author">{this.props.author}</p>
-          <Button bsStyle="primary" onClick={this.props.buttonClick}>
-            {this.props.buttonTitle}
-          </Button>
         </div>
       </div>
     );
