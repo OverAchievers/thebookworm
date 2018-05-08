@@ -6,6 +6,7 @@ import DonateBookCard from "../../components/DonateBookCard";
 import IsbnSearch from "../../components/IsbnSearch";
 import Barcode from "react-barcode";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import Button from "react-bootstrap/lib/Button";
 
 class Donate extends Component {
   constructor() {
@@ -134,8 +135,6 @@ class Donate extends Component {
               book_image={this.state.book_image}
               author={this.state.author}
               title={this.state.title}
-              buttonTitle={"Donate Book"}
-              buttonClick={this.postBookDB}
             />
           ) : null}
           <form>
@@ -151,8 +150,11 @@ class Donate extends Component {
               name="notes"
               placeholder="Notes (required)"
             />
+            <Button bsStyle="primary" onClick={this.postBookDB}>
+              Donate Book
+            </Button>
           </form>
-          
+
         </Container>
       </div>
     );
