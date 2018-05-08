@@ -3,13 +3,29 @@
     opacity: 1 !important;
 }
 
+input[type="checkbox"] {
+    background-color: #EB6864;
+    border-style: outset;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px black;
+    width: auto;
+}
+ 
 #formImg {
+    box-shadow: 2px 2px 4px black;
     margin-left: 40%;
 }
 
 #formStyle {
     margin-left: 20%;
     margin-right: 10%;
+}
+
+.inputStyle {
+    border: #EB6864 3px;
+    border-style: outset;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px black;
 }
 
 .iconContainer {
