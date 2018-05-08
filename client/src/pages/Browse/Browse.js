@@ -4,6 +4,7 @@ import BookCard from "../../components/BookCard";
 import API from "../../utils/API";
 import ReactLoading from 'react-loading';
 import {FormGroup, FormControl, ControlLabel, MenuItem, InputGroup, DropdownButton} from "react-bootstrap";
+import "./Browse.css";
 
 class Browse extends Component {
 
@@ -65,7 +66,7 @@ class Browse extends Component {
       <Container fluid>
         <Row>
           <Col size="lg-12 md-12 sm-12">
-            <form className="form-inline">
+            <form className="form-inline formStyle">
               <input onChange={this.handleInputChange} name="searchString" value={this.state.searchString} placeholder="Search"></input>
             </form>
             <hr></hr>
@@ -73,12 +74,14 @@ class Browse extends Component {
         </Row>
         <Row>
           <Col size="md-12 lg-12">
-            {this.loadStatus()}
-            {
-              this.state.books.map(book => (
-                <BookCard book={book} key={book._id} source={"browse"}></BookCard>
-              ))
-            }
+            <div className="bookStyle">
+                {this.loadStatus()}
+                {
+                  this.state.books.map(book => (
+                    <BookCard book={book} key={book._id} source={"browse"}></BookCard>
+                  ))
+                }
+            </div>    
           </Col>
         </Row>
         <div className="push"></div>

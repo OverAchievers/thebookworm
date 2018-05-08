@@ -22,7 +22,8 @@
 }
 
 .login {
-    border: solid whitesmoke 1px;
+    border: whitesmoke 1px;
+    border-style: outset;
     margin-bottom: 10%;
 }
 

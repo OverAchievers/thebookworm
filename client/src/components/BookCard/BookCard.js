@@ -57,6 +57,7 @@ class BookCard extends Component {
         </p>
         <p className="book-author">{this.props.book.author}</p>
         <Button
+        className="btn login"
         bsStyle="primary"
         // onClick={() => this.setState({ modalShow: true })}
         onClick={this.tryStuff}>
