@@ -1,3 +1,17 @@
+.btn {
+    color: black;
+    opacity: 1 !important;
+}
+
+#formImg {
+    margin-left: 40%;
+}
+
+#formStyle {
+    margin-left: 20%;
+    margin-right: 10%;
+}
+
 .iconContainer {
     margin-left: 80%;
     margin-top: -5%;
@@ -10,3 +24,4 @@
     padding: 1% 5% 5% 8%;
     width: 9em;
 }
+

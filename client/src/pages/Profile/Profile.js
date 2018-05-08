@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
 import {FormGroup, FormControl, ControlLabel, Checkbox, Button} from "react-bootstrap";
+import "./Profile.css";
 
 
 class Profile extends Component {
@@ -103,14 +104,14 @@ class Profile extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="lg-10">
-            <img src={this.state.profile_image} width="100"  class="d-inline-block align-top" height="100" alt="Default Profile"></img>
-            <hr></hr>
+          <Col size="lg-12">
+              <img id="formImg" src={this.state.profile_image} width="100"  class="d-inline-block align-top" height="100" alt="Default Profile"></img>
+              <hr></hr>              
           </Col>
         </Row>  
         <Row>
           <Col size="lg-10">
-            <div>
+            <div id="formStyle">
               <form onSubmit={this.handleSubmit}>
                 <FormGroup
                   controlId="first_name"
@@ -230,7 +231,7 @@ class Profile extends Component {
                 >
                   <Checkbox name="share_address" onChange={this.handleChange} checked={this.state.share_address}> Address visible to other users</Checkbox>
                 </FormGroup> 
-                <Button type="submit" onSubmit={this.handleSubmit} disabled={this.state.disable_save}>Save</Button>
+                <Button className="btn btn-lg login float-right" type="submit" onSubmit={this.handleSubmit} disabled={this.state.disable_save}>Save</Button>
               </form>
             </div>
           </Col>
