@@ -20,9 +20,29 @@ class BookManageModal extends Component {
     })
       .catch(err => console.log(err));
   };
-  // logging  = () =>{
-  //   console.log("working");
-  // }
+  showUserMobileInfo = () => {
+      if(this.props.book.user){
+          if(this.props.book.user.share_phone){
+              return <p>Mobile: {this.props.book.user.phone}</p>
+          } else{
+              return null;
+          }
+      } else{
+          return null;
+      }
+  }
+
+  showUserAddressInfo = () => {
+      if(this.props.book.user){
+          if(this.props.book.user.address && this.props.book.user.share_address){
+              return <p>Address:<br />{this.props.book.user.address.addr_line_1}<br />{this.props.book.user.address.addr_line_2}<br />{this.props.book.user.address.city},{this.props.book.user.address.state} - {this.props.book.user.address.zipcode}</p>;
+          } else{
+              return null;
+          }
+      } else{
+          return null;
+      }
+  }
     render() {
 
         return (
@@ -34,8 +54,10 @@ class BookManageModal extends Component {
                 <div className="modal-body">
                     <p>{this.props.book.author}</p>
                     <p>{this.props.book.desc}</p>
-                    <p>{this.props.book.condition}</p>
-                    <p>{this.props.book.notes}</p>
+                    <p>Book condition:{this.props.book.condition}</p>
+                    <p>User notes:{this.props.book.notes}</p>
+                    {this.showUserMobileInfo()}
+                    {this.showUserAddressInfo()}
 
                 </div>
                 <div className="modal-footer">
