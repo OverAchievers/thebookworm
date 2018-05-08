@@ -28,14 +28,17 @@ margin-left: 23%;
 .div-class{ 
 margin-left: 33%;
 }
+
 .browsebtn{
 	margin-top:13%;
 }
 
 .heading{
-	color: #97461C;
+color: #97461C;
 margin-left:41%;
 font-family:'Russo One', sans-serif;
+text-decoration: underline;
+
 
 }
 .push {
