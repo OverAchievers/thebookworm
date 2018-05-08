@@ -1,0 +1,22 @@
+.bookStyle {
+    margin-left: 5%; 
+}
+
+.formStyle {
+    border: #EB6864 3px;
+    border-style: outset; 
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px black;
+    margin-left: 25%;
+    width: 50%;
+}
+
+input {
+    border-radius: 5px;
+    width: 100%;
+}
+
+input:focus {
+    border-radius: 5px;
+    outline-color: white;
+}
