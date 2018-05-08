@@ -6,6 +6,8 @@ import DonateBookCard from "../../components/DonateBookCard";
 import IsbnSearch from "../../components/IsbnSearch";
 import Barcode from "react-barcode";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import Button from "react-bootstrap/lib/Button";
+import "./Donate.css";
 
 class Donate extends Component {
   constructor() {
@@ -121,39 +123,52 @@ class Donate extends Component {
 
   render() {
     return (
-      <div>
-        <Container fluid>
+      
+    <Container fluid>
+      <Col size="lg-10">
+      <div className="style">
           <h1>Donate Page</h1>
           <IsbnSearch
             handleFormSubmit={this.searchClick}
             handleInputChange={this.handleInputChange}
           />
-          {this.state.isbnClicked ? (
-            <DonateBookCard
-              book_image={this.state.book_image}
-              author={this.state.author}
-              title={this.state.title}
-              buttonTitle={"Donate Book"}
-              buttonClick={this.postBookDB}
-            />
-          ) : null}
+            <div className="row col-12">
+              <div className="col-6" id="barcode">
+                <Barcode value={this.state.search} />
+              </div>
+              <div className="col-6"  id="bookCard">
+                {this.state.isbnClicked ? (
+                  <DonateBookCard
+                    book_image={this.state.book_image}
+                    author={this.state.author}
+                    title={this.state.title}
+                  />
+                ) : null}
+              </div>
+            </div>  
           <form>
             <Input
+              className="inputStyle"
               value={this.state.condition}
               onChange={this.handleTextConditionChange}
               name="condition"
               placeholder="Condition (required)"
             />
             <TextArea
+              className="textAreaStyle"
               value={this.state.notes}
               onChange={this.handleTextConditionChange}
               name="notes"
               placeholder="Notes (required)"
             />
+            <Button className="btn login" bsStyle="primary" onClick={this.postBookDB}>
+              Donate Book
+            </Button>
           </form>
-          <Barcode value={this.state.search} />
-        </Container>
-      </div>
+        </div>
+      </Col>
+    </Container>
+      
     );
   }
 }

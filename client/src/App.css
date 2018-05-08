@@ -12,6 +12,10 @@ body {
         margin-left: 12%;
     }
 
+    .bookStyle {
+        margin-left: 15%;
+    }
+
     .brand {
         font-size: 2rem;
         margin-top: 10%;
@@ -29,8 +33,7 @@ body {
     
     .Footer {
         bottom: 0;
-        font-size: .1em;
-        position: fixed;
+        font-size: .7em;
     }
 
     .footerTitle {
@@ -47,5 +50,15 @@ body {
 
     .navbar {
         height: 5.5rem;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    #bookCard {
+        margin-left: 1%;
+    }
+
+    .style {
+        margin-left: 5%;
     }
 }
