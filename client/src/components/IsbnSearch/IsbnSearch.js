@@ -12,7 +12,7 @@ const IsbnSearch = props => (
                 name="isbn"
                 list="isbn"
                 type="text"
-                className="form-control"
+                className="form-control inputStyle"
                 placeholder="Enter Book Title or ISBN Number"
                 id="isbn"
                             />
@@ -20,12 +20,14 @@ const IsbnSearch = props => (
             <button
                 type="submit"
                 onClick={props.handleFormSubmit}
-                className="btn btn-success btn-sm"
+                className="btn login btn-sm"
+                id="searchBtn"
             >
                 Search
             </button>
         </div>
     </div>
+    
     
 );
 
