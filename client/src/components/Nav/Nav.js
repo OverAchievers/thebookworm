@@ -133,7 +133,7 @@ class Nav extends Component {
     return (
       <nav className="navbar">
         {this.renderRedirect()}
-        <h1 className="brand">The Book Worm</h1>
+        <h1 className="brand row">The Book Worm</h1>
         {
           this.state.loggedIn === true ? (
             <Button className="btn btn-responsive float-right login row"  onClick={() => this.redirectTo('/browse')}>Browse</Button>
@@ -151,7 +151,7 @@ class Nav extends Component {
         }
         {
           this.state.loggedIn === true ? (
-            <button className="btn btn-responsive float-right login row"  onClick={() => this.redirectTo('/profile')}>Profile</button>
+            <button className="btn btn-responsive profileBtn float-right login row"  onClick={() => this.redirectTo('/profile')}>Profile</button>
           ) : (null)
         }
         {
