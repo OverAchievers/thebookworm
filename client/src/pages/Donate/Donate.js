@@ -128,6 +128,7 @@ class Donate extends Component {
             handleFormSubmit={this.searchClick}
             handleInputChange={this.handleInputChange}
           />
+          <Barcode value={this.state.search} />
           {this.state.isbnClicked ? (
             <DonateBookCard
               book_image={this.state.book_image}
@@ -151,7 +152,7 @@ class Donate extends Component {
               placeholder="Notes (required)"
             />
           </form>
-          <Barcode value={this.state.search} />
+          
         </Container>
       </div>
     );
