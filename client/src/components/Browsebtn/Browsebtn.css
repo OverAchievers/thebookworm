@@ -4,7 +4,7 @@
 }
 
 .browsebtn {
-  left: 10px;
+  margin-left: 1px;
   background: #E53935;
 }
 
@@ -25,8 +25,8 @@ width: 80%;
 
 .Bb{
   color:#317310;
-  font-family:'Russo One', sans-serif;
-  margin-left: 18%;
+  font-family:'Russo One', sans-serif 30px;
+  margin-left: 20%;
   margin-top:25%;
 }
 

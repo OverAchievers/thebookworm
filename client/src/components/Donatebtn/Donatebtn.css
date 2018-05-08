@@ -4,7 +4,7 @@
   	border-radius: 50%;
   	width:40%; 
 	margin-left:10%;
-	margin-top: 18px;
+	margin-top: 20px;
 
 }
 .div-class{
@@ -21,9 +21,9 @@ margin-top: 3%;
 .Db{
 	color: #EB6864;
 	margin-top: 10%;
-	margin-left: 18%;	
-	font-weight: bold;
-	font-family: 'Russo One', sans-serif;
+	margin-left: 20%;	
+	/*font-weight: bold;*/
+	font-family: 'Russo One', sans-serif 30px;
 }
 
 
