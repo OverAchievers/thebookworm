@@ -22,6 +22,11 @@
 	transition: box-shadow 1s, transform 2s;
 }
 
+.links {
+    color: white !important;
+    cursor: pointer;
+}
+
 .login {
     border: solid whitesmoke 1px;
     /* margin-bottom: 10%; */

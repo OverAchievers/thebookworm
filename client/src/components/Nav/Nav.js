@@ -131,27 +131,27 @@ class Nav extends Component {
   
   render() {
     return (
-      <nav className="navbar">
+      <nav className="navbar" id="Topnavbar">
         {this.renderRedirect()}
         <h1 className="brand row">The Book Worm</h1>
         {
           this.state.loggedIn === true ? (
-            <Button className="btn btn-responsive float-right login row"  onClick={() => this.redirectTo('/browse')}>Browse</Button>
+            <a className="links" onClick={() => this.redirectTo('/browse')}>Browse</a>
           ) : (null)
         }
         {
           this.state.loggedIn === true ? (
-            <button className="btn btn-responsive float-right login row"  onClick={() => this.redirectTo('/donate')}>Donate</button>
+            <a className="links" onClick={() => this.redirectTo('/donate')}>Donate</a>
           ) : (null)
         }
         {
           this.state.loggedIn === true ? (
-            <button className="btn btn-responsive float-right login row"  onClick={() => this.redirectTo('/manage')}>Manage</button>
+            <a className="links" onClick={() => this.redirectTo('/manage')}>Manage</a>
           ) : (null)
         }
         {
           this.state.loggedIn === true ? (
-            <button className="btn btn-responsive profileBtn float-right login row"  onClick={() => this.redirectTo('/profile')}>Profile</button>
+            <a className="links" onClick={() => this.redirectTo('/profile')}>Profile</a>
           ) : (null)
         }
         {
