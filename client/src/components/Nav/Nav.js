@@ -133,25 +133,30 @@ class Nav extends Component {
     return (
       <nav className="navbar" id="Topnavbar">
         {this.renderRedirect()}
-        <h1 className="brand row">The Book Worm</h1>
+        <a className="brand active" onClick={() => this.redirectTo('/')}>The Book Worm</a>
         {
           this.state.loggedIn === true ? (
-            <a className="links" onClick={() => this.redirectTo('/browse')}>Browse</a>
+            <a className="navLinks" onClick={() => this.redirectTo('/browse')}>Browse</a>
           ) : (null)
         }
         {
           this.state.loggedIn === true ? (
-            <a className="links" onClick={() => this.redirectTo('/donate')}>Donate</a>
+            <a className="navLinks" onClick={() => this.redirectTo('/donate')}>Donate</a>
           ) : (null)
         }
         {
           this.state.loggedIn === true ? (
-            <a className="links" onClick={() => this.redirectTo('/manage')}>Manage</a>
+            <a className="navLinks" onClick={() => this.redirectTo('/manage')}>Manage</a>
           ) : (null)
         }
         {
           this.state.loggedIn === true ? (
-            <a className="links" onClick={() => this.redirectTo('/profile')}>Profile</a>
+            <a className="navLinks" onClick={() => this.redirectTo('/profile')}>Profile</a>
+          ) : (null)
+        }
+        {
+          this.state.loggedIn === true ? (
+            <a class="icon" onClick={() => this.redirectTo('/')}><i class="fa fa-bars text-light"></i></a>
           ) : (null)
         }
         {

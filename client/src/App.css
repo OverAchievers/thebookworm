@@ -14,18 +14,9 @@ body {
 
     .brand {
         font-size: 2rem;
-        /* margin-top: -10%; */
+        margin-top: 10%;
         padding-bottom: 15%;
 
-    }
-
-    .btn-responsive {
-        padding: 2px 4px;
-        font-size: 80%;
-        line-height: 1;
-        /* margin-top: 10%; */
-        /* margin-right: -1%; */
-        /* margin-left: 2%;  */
     }
 
     .button-container {
@@ -56,14 +47,5 @@ body {
 
     .navbar {
         height: 5.5rem;
-    }
-}
-
-@media (min-width: 480px) and (max-width: 992px) {
-    .btn-responsive {
-        padding: 4px 9px;
-        font-size: 90%;
-        line-height: 1.2;
-        margin-right: 3%;
     }
 }
