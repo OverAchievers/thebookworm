@@ -156,7 +156,7 @@ class Nav extends Component {
         }
         {
           this.state.loggedIn === true ? (
-            <a class="icon" onClick={() => this.redirectTo('/')}><i class="fa fa-bars text-light"></i></a>
+            <a className="icon" onClick={() => this.redirectTo('/')}><i className="fa fa-bars text-light"></i></a>
           ) : (null)
         }
         {

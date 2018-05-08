@@ -26,10 +26,6 @@
 	transition: box-shadow 1s, transform 2s;
 }
 
-.icon:hover {
-    color: #EB6864 !important;
-}
-
 .login {
     border: solid whitesmoke 1px;
 }
@@ -62,11 +58,10 @@ nav {
 
 .navbar .icon {
     display: none;
+
 }
 
 .navLinks {
-    /* background-color: white; */
-    /* border: solid black 1px; */
     border-radius: 5px;
     color: white !important;
     cursor: pointer;
@@ -77,10 +72,6 @@ nav {
 }
 
 @media screen and (max-width: 600px) {
-.icon:hover {
-    color: #EB6864 !important;
-}
-
     .navbar a:not(:first-child) {
         display: none;
     }
@@ -91,15 +82,15 @@ nav {
 }
 
 @media screen and (max-width: 600px) {
-    .navbar.responsive {
+    .navbar.active {
         position: relative;
     }
-    .navbar.responsive .icon {
+    .navbar.active .icon {
         position: absolute;
         right: 0;
         top: 0;
     }
-    .navbar.responsive a {
+    .navbar.active a {
         float: none;
         display: block;
         text-align: left;
