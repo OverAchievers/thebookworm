@@ -40,7 +40,10 @@ export default {
     console.log(user);
     return axios.put("/api/users/" + user._id, user);
   },
+
   deleteBook: function (id) {
-    return axios.get("/api/books/id/" + id);
+    console.log(id);
+    return axios.delete("/api/books/" + id);
+
   }
 };
