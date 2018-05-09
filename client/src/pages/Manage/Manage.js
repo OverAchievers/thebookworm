@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
 import UserIcon from "../../components/UserIcon";
 import BookCard from "../../components/BookCard";
+import "./Manage.css";
 
 let userSessionEntity;
 
