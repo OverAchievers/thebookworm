@@ -127,7 +127,7 @@ class Donate extends Component {
     <Container fluid>
       <Col size="lg-10">
       <div className="style">
-          <h1>Donate Page</h1>
+            <h2 className="heading">Donate</h2>
           <IsbnSearch
             handleFormSubmit={this.searchClick}
             handleInputChange={this.handleInputChange}
