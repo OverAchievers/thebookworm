@@ -240,7 +240,7 @@ class Profile extends Component {
                 >
                   <Checkbox className="checkStyle" name="share_address" onChange={this.handleChange} checked={this.state.share_address}> Address visible to other users</Checkbox>
                 </FormGroup> 
-                <Button className="btn btn-lg login float-right" type="submit" onSubmit={this.handleSubmit} disabled={this.state.disable_save}>Save</Button>
+                <Button className="btn btn-lg login float-right save" type="submit" onSubmit={this.handleSubmit} disabled={this.state.disable_save}>Save</Button>
               </form>
             </div>
           </Col>

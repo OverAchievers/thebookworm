@@ -20,7 +20,7 @@ const IsbnSearch = props => (
             <button
                 type="submit"
                 onClick={props.handleFormSubmit}
-                className="btn login btn-sm"
+                className="btn login btn-sm btn-primary"
                 id="searchBtn"
             >
                 Search

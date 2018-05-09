@@ -52,7 +52,7 @@ class BookBrowseModal extends Component {
                     {this.showUserAddressInfo()}
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" onClick={this.props.onClose}>
+                    <button type="button" className="btn btn-primary" onClick={this.props.onClose}>
                         Close
                     </button>
                 </div>
