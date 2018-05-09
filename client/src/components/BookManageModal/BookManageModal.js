@@ -61,13 +61,13 @@ class BookManageModal extends Component {
 
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" onClick={this.props.onClickBackdrop}>
+                    <button type="button" className="btn btn-primary" onClick={this.props.onClickBackdrop}>
                         Close
                     </button>
-                    <button type="button" className="btn btn-secondary" onClick={()=>{this.deleteBook(this.props.book._id)}}>
+                    <button type="button" className="btn btn-primary" onClick={()=>{this.deleteBook(this.props.book._id)}}>
                       Delete
                     </button>
-                    <button type="button" className="btn btn-secondary">
+                    <button type="button" className="btn btn-primary">
                         Edit
                     </button>
                 </div>
