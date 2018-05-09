@@ -162,14 +162,14 @@ class Nav extends Component {
         {
           this.state.loggedIn === false ? (
             <GoogleLogin
-              className="login-btn btn btn-responsive  float-right login row"
+              className="btn-primary btn btn-responsive  float-right login row"
               clientId="517497834549-3j7earnjbedaa8ntbt4cf5iqblnr4nfh.apps.googleusercontent.com"
               buttonText="Login"
               onSuccess={this.handlePostGoogleLogin}
               onFailure={this.handleGoogleLoginFailure}
             />) : (
               <GoogleLogout
-                className="login-btn btn btn-responsive float-right login row"
+                className="btn-primary btn btn-responsive float-right login row"
                 clientId="517497834549-3j7earnjbedaa8ntbt4cf5iqblnr4nfh.apps.googleusercontent.com"
                 buttonText="Logout"
                 onLogoutSuccess={this.handlePostGoogleLogout}
