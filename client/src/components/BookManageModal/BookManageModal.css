@@ -1,0 +1,16 @@
+.modal-body {
+    background-color: blanchedalmond;
+}
+
+.modal-content {
+    box-shadow: 0 0 10px 2px white, 0 0 20px 10px white;
+}
+
+.modal-header {
+    /* background-color: aqua; */
+    background: -webkit-linear-gradient(#EB6864, rgb(220, 219, 219));
+}
+
+.modal-footer {
+    background: -webkit-linear-gradient(#4d2c02, rgb(220, 219, 219));
+}
