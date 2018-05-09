@@ -104,6 +104,7 @@ class Profile extends Component {
     return (
       <Container fluid>
         <Row>
+          <h2 className="heading">Profile</h2>
           <Col size="lg-12">
               <img id="formImg" src={this.state.profile_image} width="100"  class="d-inline-block align-top" height="100" alt="Default Profile"></img>
               <hr></hr>              

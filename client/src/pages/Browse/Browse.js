@@ -65,8 +65,9 @@ class Browse extends Component {
     return (
       <Container fluid>
         <Row>
+          <h2 className="heading">Browse</h2>
           <Col size="lg-12 md-12 sm-12">
-            <form className="form-inline formStyle">
+            <form className="form-inline searchStyle">
               <input onChange={this.handleInputChange} name="searchString" value={this.state.searchString} placeholder="Search"></input>
             </form>
             <hr></hr>

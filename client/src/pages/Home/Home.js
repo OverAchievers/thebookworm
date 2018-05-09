@@ -36,7 +36,7 @@ class Home extends Component {
         {this.renderRedirect()}
         <Row id="button-row">
         <Container>
-            <h2 className="heading"> Home Page
+            <h2 className="heading"> Home
               </h2>
               </Container>
         
