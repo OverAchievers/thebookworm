@@ -27,8 +27,8 @@ class Donate extends Component {
       notes: "",
       user: "",
       isbnClicked: false,
-      width: 1,
-      height: 75
+      width: .7,
+      height: 65
     };
     this.searchClicked = this.searchClicked.bind(this);
   }

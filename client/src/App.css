@@ -8,6 +8,10 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+     #barcode {
+         margin-right: 5%;
+     }
+
     .book {
         margin-left: 12%;
     }
@@ -51,12 +55,16 @@ body {
 }
 
 @media screen and (max-width: 1080px) {
-    .browsebtn {
-        width: 120px;
+    #barcode {
+        margin-left: 5%;
     }
 
     #bookCard {
-        margin-left: 1%;
+        margin-left: 10%;
+    }
+
+    .browsebtn {
+        width: 120px;
     }
 
     .donate-btn {
