@@ -30,6 +30,7 @@
     border: whitesmoke 1px;
     border-style: outset;
     margin-bottom: 10%;
+    margin-top: 5%;
 }
 
 nav {
@@ -42,7 +43,7 @@ nav {
 }
 
 .navbar {
-    overflow: hidden;
+    overflow: none;
 }
 
 .navbar a {
@@ -67,6 +68,8 @@ nav {
     border-radius: 5px;
     color: white !important;
     cursor: pointer;
+    margin-bottom: 5%;
+    margin-top: 10%;
 }
 
 .navLinks:hover {
