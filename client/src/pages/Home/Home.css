@@ -1,14 +1,14 @@
 .button-container {
-margin-left: 22%;
+	margin-left: 22%;
  
 }
 .donate-btn:hover{
 	opacity: 1;
- transform: scale(1.00);
+    transform: scale(1.00);
 }
 .donate-btn{
-	 opacity: 1;
- transform: scale(1.10);
+	opacity: 1;
+ 	transform: scale(1.10);
 }
 .donate-btn{
 	margin-right: 20%; 
@@ -16,15 +16,15 @@ margin-left: 22%;
 
 .browsebtn:hover{
 	opacity: 1;
- transform: scale(1.00);
+ 	transform: scale(1.00);
 }
 .browsebtn{
-	 opacity: 1;
- transform: scale(1.10);
+	opacity: 1;
+ 	transform: scale(1.10);
 }
 
 .div-class{ 
-margin-left: 32%;
+	margin-left: 32%;
 }
 .browsebtn{
 	margin-top:13%;
@@ -41,6 +41,6 @@ margin-left: 32%;
 }
 
 .button-row{
-padding-top: 10%; 
+	padding-top: 10%; 
 }
 

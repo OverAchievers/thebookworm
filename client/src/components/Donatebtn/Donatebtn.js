@@ -13,8 +13,8 @@ const Donatebtn = props => (
 		    className="donate-btn" />
 		   
 			<h5 className="Db">Donate</h5>
- </a>	
- </div>
+		 </a>	
+	 </div>
 
 
 

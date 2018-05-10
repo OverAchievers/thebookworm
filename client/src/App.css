@@ -22,6 +22,13 @@ body {
 
     .brand {
         font-size: 2rem;
+        margin-top: 10%;
+        padding-bottom: 15%;
+
+    }
+
+    .button-container {
+        margin-left: 15%;
     }
 
     .browsebtn {
@@ -49,8 +56,12 @@ body {
         margin: 3% 0 10% 30%;
     }
 
+    .heading {
+        margin-left: 25%;
+    }
+
     .navbar {
-        height: 5rem;
+        height: 5.5rem;
     }
 }
 

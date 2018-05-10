@@ -131,40 +131,45 @@ class Nav extends Component {
   
   render() {
     return (
-      <nav className="navbar">
+      <nav className="navbar" id="Topnavbar">
         {this.renderRedirect()}
-        <h1 className="brand">The Book Worm</h1>
+        <a className="brand active" onClick={() => this.redirectTo('/')}>The Book Worm</a>
         {
           this.state.loggedIn === true ? (
-            <Button className="btn float-right login btn-primary" onClick={() => this.redirectTo('/browse')}>Browse</Button>
+            <a className="navLinks" onClick={() => this.redirectTo('/browse')}>Browse</a>
           ) : (null)
         }
         {
           this.state.loggedIn === true ? (
-            <button className="btn float-right login btn-primary"  onClick={() => this.redirectTo('/donate')}>Donate</button>
+            <a className="navLinks" onClick={() => this.redirectTo('/donate')}>Donate</a>
           ) : (null)
         }
         {
           this.state.loggedIn === true ? (
-            <button className="btn float-right login btn-primary"  onClick={() => this.redirectTo('/manage')}>Manage</button>
+            <a className="navLinks" onClick={() => this.redirectTo('/manage')}>Manage</a>
           ) : (null)
         }
         {
           this.state.loggedIn === true ? (
-            <button className="btn float-right login btn-primary"  onClick={() => this.redirectTo('/profile')}>Profile</button>
+            <a className="navLinks" onClick={() => this.redirectTo('/profile')}>Profile</a>
+          ) : (null)
+        }
+        {
+          this.state.loggedIn === true ? (
+            <a className="icon" onClick={() => this.redirectTo('/')}><i className="fa fa-bars text-light"></i></a>
           ) : (null)
         }
         {
           this.state.loggedIn === false ? (
             <GoogleLogin
-              className="login-btn btn float-right login btn-primary"
+              className="btn-primary btn btn-responsive  float-right login row"
               clientId="517497834549-3j7earnjbedaa8ntbt4cf5iqblnr4nfh.apps.googleusercontent.com"
               buttonText="Login"
               onSuccess={this.handlePostGoogleLogin}
               onFailure={this.handleGoogleLoginFailure}
             />) : (
               <GoogleLogout
-                className="login-btn btn float-right login btn-primary"
+                className="btn-primary btn btn-responsive float-right login row"
                 clientId="517497834549-3j7earnjbedaa8ntbt4cf5iqblnr4nfh.apps.googleusercontent.com"
                 buttonText="Logout"
                 onLogoutSuccess={this.handlePostGoogleLogout}
