@@ -38,12 +38,8 @@ class Home extends Component {
         <Container>
             <h2 className="heading"> Home
               </h2>
-              </Container>
-        
+        </Container>
               <Browsebtn whenClicked={this.redirectTo}/>
-            
-
-              
               <Donatebtn whenClicked={this.redirectTo}/> 
             </Row>
       </Container>
