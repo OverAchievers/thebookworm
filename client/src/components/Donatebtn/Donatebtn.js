@@ -5,13 +5,12 @@ import "./Donatebtn.css";
 // That way we don't have to define them all individually
 const Donatebtn = props => (
 	
-	<div className="div-class">
-		<h4 className="donate-para">Want to donate books?</h4>
-		<a lassName="donate" onClick={() => props.whenClicked('/donate')}>
-			<img
-				src={"https://media.giphy.com/media/8Ds39S2EsepEs/giphy.gif"}
-				alt={"Book gif"}
-				className="donate-btn" />
+		<div className="div-class">
+		<a className="donate" onClick={() => props.whenClicked('/donate')}>
+		<img
+		    src={"https://media.giphy.com/media/8Ds39S2EsepEs/giphy.gif"}
+		    alt={"Book gif"}
+		    className="donate-btn" />
 		   
 			<h5 className="Db">Donate</h5>
 		 </a>	

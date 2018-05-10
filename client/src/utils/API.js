@@ -45,5 +45,9 @@ export default {
     console.log(id);
     return axios.delete("/api/books/" + id);
 
+  },
+  updateBook:function(bookData){
+    console.log(bookData);
+    return axios.put("/api/books/"+ bookData.id,bookData);
   }
 };

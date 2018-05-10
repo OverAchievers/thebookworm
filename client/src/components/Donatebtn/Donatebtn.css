@@ -1,15 +1,13 @@
 .donate-btn {
-  	
   	background-color: none;
   	border-radius: 50%;
-  	width: 100px; 
-	margin-left: 10%;
-	margin-top: 10px;
-
+  	width: 150px; 
+	/* margin-left: 10%; */
+	/* margin-top: 18px; */
 }
 .div-class{
-width:20%;
-margin-top: 3%;
+	width: 20%;
+	margin-top: 3%;
 
 
 }

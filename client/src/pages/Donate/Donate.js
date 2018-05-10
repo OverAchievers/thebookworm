@@ -26,7 +26,9 @@ class Donate extends Component {
       condition: "",
       notes: "",
       user: "",
-      isbnClicked: false
+      isbnClicked: false,
+      width: .7,
+      height: 65
     };
     this.searchClicked = this.searchClicked.bind(this);
   }
@@ -123,20 +125,20 @@ class Donate extends Component {
 
   render() {
     return (
-      
-    <Container fluid>
-      <Col size="lg-10">
-      <div className="style">
+
+      <Container fluid>
+        <Col size="lg-10">
+          <div className="style">
             <h2 className="heading">Donate</h2>
-          <IsbnSearch
-            handleFormSubmit={this.searchClick}
-            handleInputChange={this.handleInputChange}
-          />
+            <IsbnSearch
+              handleFormSubmit={this.searchClick}
+              handleInputChange={this.handleInputChange}
+            />
             <div className="row col-12">
               <div className="col-6" id="barcode">
-                <Barcode value={this.state.search} />
+                <Barcode value={this.state.search} width={this.state.width} height={this.state.height} />
               </div>
-              <div className="col-6"  id="bookCard">
+              <div className="col-6" id="bookCard">
                 {this.state.isbnClicked ? (
                   <DonateBookCard
                     book_image={this.state.book_image}
@@ -145,30 +147,30 @@ class Donate extends Component {
                   />
                 ) : null}
               </div>
-            </div>  
-          <form>
-            <Input
-              className="inputStyle"
-              value={this.state.condition}
-              onChange={this.handleTextConditionChange}
-              name="condition"
-              placeholder="Condition (required)"
-            />
-            <TextArea
-              className="textAreaStyle"
-              value={this.state.notes}
-              onChange={this.handleTextConditionChange}
-              name="notes"
-              placeholder="Notes (required)"
-            />
-            <Button className="btn login" bsStyle="primary" onClick={this.postBookDB}>
-              Donate Book
+            </div>
+            <form>
+              <Input
+                className="inputStyle"
+                value={this.state.condition}
+                onChange={this.handleTextConditionChange}
+                name="condition"
+                placeholder="Condition (required)"
+              />
+              <TextArea
+                className="textAreaStyle"
+                value={this.state.notes}
+                onChange={this.handleTextConditionChange}
+                name="notes"
+                placeholder="Notes (required)"
+              />
+              <Button className="btn login" bsStyle="primary" onClick={this.postBookDB}>
+                Donate Book
             </Button>
-          </form>
-        </div>
-      </Col>
-    </Container>
-      
+            </form>
+          </div>
+        </Col>
+      </Container>
+
     );
   }
 }

@@ -8,6 +8,10 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+     #barcode {
+         margin-right: 5%;
+     }
+
     .book {
         margin-left: 12%;
     }
@@ -27,10 +31,18 @@ body {
         margin-left: 15%;
     }
 
+    .browsebtn {
+        width: 80px;
+    }
+
     .card {
         margin-left: 20%;
     }
-    
+
+    .donate-btn {
+        width: 65px;
+    }
+
     .Footer {
         bottom: 0;
         font-size: .7em;
@@ -54,10 +66,22 @@ body {
 }
 
 @media screen and (max-width: 1080px) {
-    #bookCard {
-        margin-left: 1%;
+    #barcode {
+        margin-left: 5%;
     }
 
+    #bookCard {
+        margin-left: 10%;
+    }
+
+    .browsebtn {
+        width: 120px;
+    }
+
+    .donate-btn {
+        width: 100px;
+    }
+    
     .style {
         margin-left: 5%;
     }
