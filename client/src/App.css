@@ -44,7 +44,7 @@ body {
 
 @media screen and (max-width: 1080px) {
     #bookCard {
-        margin-left: 1%;
+        /* margin-left: 1%; */
     }
 
     .style {
