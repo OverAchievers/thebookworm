@@ -20,13 +20,21 @@ body {
         font-size: 2rem;
     }
 
+    .browsebtn {
+        width: 80px;
+    }
+
     .card {
         margin-left: 20%;
     }
-    
+
+    .donate-btn {
+        width: 65px;
+    }
+
     .Footer {
         bottom: 0;
-        font-size: .1em;
+        font-size: .7em;
     }
 
     .footerTitle {
@@ -43,10 +51,18 @@ body {
 }
 
 @media screen and (max-width: 1080px) {
-    #bookCard {
-        /* margin-left: 1%; */
+    .browsebtn {
+        width: 120px;
     }
 
+    #bookCard {
+        margin-left: 10%;
+    }
+
+    .donate-btn {
+        width: 100px;
+    }
+    
     .style {
         margin-left: 5%;
     }

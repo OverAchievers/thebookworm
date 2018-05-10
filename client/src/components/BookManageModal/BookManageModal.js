@@ -49,25 +49,25 @@ class BookManageModal extends Component {
             //This modal needs to be enhanced to show more book and donor details
             <Modal {...this.props}>
                 <div className="modal-header">
-                    <h5 className="modal-title">{this.props.book.title}</h5>
+                    <h5 className="modal-title"><strong>{this.props.book.title}</strong></h5>
                 </div>
                 <div className="modal-body">
-                    <p>{this.props.book.author}</p>
+                    <p><strong>{this.props.book.author}</strong></p>
                     <p>{this.props.book.desc}</p>
-                    <p>Book condition:{this.props.book.condition}</p>
-                    <p>User notes:{this.props.book.notes}</p>
+                    <p><strong>Book condition:</strong> {this.props.book.condition}</p>
+                    <p><strong>User notes:</strong> {this.props.book.notes}</p>
                     {this.showUserMobileInfo()}
                     {this.showUserAddressInfo()}
 
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" onClick={this.props.onClickBackdrop}>
+                    <button type="button" className="btn btn-primary" onClick={this.props.onClickBackdrop}>
                         Close
                     </button>
-                    <button type="button" className="btn btn-secondary" onClick={()=>{this.deleteBook(this.props.book._id)}}>
+                    <button type="button" className="btn btn-primary" onClick={()=>{this.deleteBook(this.props.book._id)}}>
                       Delete
                     </button>
-                    <button type="button" className="btn btn-secondary">
+                    <button type="button" className="btn btn-primary">
                         Edit
                     </button>
                 </div>

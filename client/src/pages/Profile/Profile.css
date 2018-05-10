@@ -41,3 +41,9 @@ input[type="checkbox"] {
     width: 9em;
 }
 
+.save:hover {
+    background-color: rgb(244, 59, 59);
+    border: rgb(244, 59, 59) 1px;
+    border-style: outset;
+    color: white;
+}

@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
 import UserIcon from "../../components/UserIcon";
 import BookCard from "../../components/BookCard";
+import "./Manage.css";
 
 let userSessionEntity;
 
@@ -46,25 +47,28 @@ class Manage extends Component {
   render() {
     return (
       <Container fluid>
+        <Row>
+         <h2 className="heading">Manage</h2>
+          <Col size="lg-12 md-12 sm-12">
+            <hr></hr>
+          </Col>
+        </Row>
       <Row>
-      <Col size="lg-12 md-12 sm-12">
-      <hr></hr>
-      </Col>
-      </Row>
-      <Row>
-      {this.state.books.length ? (
-        <Col size="md-12 lg-12">
-        {this.state.books.map(book => (
+          {this.state.books.length ? (
+              <Col size="md-12 lg-12">
+                <div className="bookStyle">
+                  {this.state.books.map(book => (
 
-          <BookCard book={book} key={book._id} source={"manage"} reload={this.loadBooks}>
+                      <BookCard book={book} key={book._id} source={"manage"} reload={this.loadBooks}>
 
-          </BookCard>
-        
-        ))}
-        </Col>
-      ) : (
-        <h3>No Results to Display</h3>
-      )}
+                      </BookCard>
+                  
+                  ))}
+                </div>
+              </Col>
+            ) : (
+            <h3>No Results to Display</h3>
+          )}
       </Row>
       <div className="push"></div>
       </Container>

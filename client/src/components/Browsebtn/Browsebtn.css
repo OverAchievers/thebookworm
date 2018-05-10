@@ -1,44 +1,34 @@
-.browsebtn {
-  color: green;
-  
-}
-
-.browsebtn {
-  left: 10px;
-  background: #E53935;
-}
-
 .browsebtn  {
-width: 80%;
-    background-color: none;
-    border-radius: 50%;
-  margin-right:50%;
-  margin-bottom: -8px;
+  color: green;
+  width: 180px;
+  background-color: none;
+  border-radius: 50%;
+  /* margin-bottom: -8px; */
 }
 
 .browse-para{
- color:#317310;
-  margin-top: 15%;
-  text-align: center;
-  margin-right: 14%;
+    color:#317310;
+    margin-top: 15%;
+    text-align: center;
+    margin-right: 14%;
 }
 
 .Bb{
-  color:#317310;
-  font-family:'Russo One', sans-serif;
-  margin-left: 18%;
-  margin-top:25%;
+    color:#317310;
+    font-family:'Russo One', sans-serif;
+    margin-left: 18%;
+    margin-top:25%;
 }
 
 .button-container{
-  margin-top: 2%;
-  width:12%;
+    margin-top: 2%;
+    width:12%;
 
 }
 
 .browse-btn {
-margin-left: 2%;
-  }
+    margin-left: 2%;
+}
 
 
 

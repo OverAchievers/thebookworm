@@ -32,12 +32,12 @@ margin-left: 32%;
 
 .heading{
 	color: #97461C;
-margin-left:41%;
-font-family:'Russo One', sans-serif;
+	margin-left: 40%;
+	font-family:'Russo One', sans-serif;
 
 }
 .push {
-    height: 100px;  
+    height: 120px;  
 }
 
 .button-row{
