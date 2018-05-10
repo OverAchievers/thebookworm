@@ -9,9 +9,14 @@ import Modal from 'react-bootstrap4-modal';
 import Button from 'react-bootstrap/lib/Button';
 import API from "../../utils/API";
 import Manage from "../../pages/Manage";
+import {FormGroup, FormControl, ControlLabel, Checkbox} from "react-bootstrap";
 
 
 class BookManageModal extends Component {
+state = {
+  id:this.props.book._id,
+  notes:""
+};
   deleteBook = id => {
     API.deleteBook(id)
     .then(res => {
@@ -20,31 +25,29 @@ class BookManageModal extends Component {
     })
       .catch(err => console.log(err));
   };
-  showUserMobileInfo = () => {
-      if(this.props.book.user){
-          if(this.props.book.user.share_phone){
-              return <p>Mobile: {this.props.book.user.phone}</p>
-          } else{
-              return null;
-          }
-      } else{
-          return null;
-      }
-  }
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+  handleSubmit=event =>{
+    event.preventDefault();
+    const bookData={
+      id:this.state.id,
+      notes: this.state.notes
+}
+  console.log("bookData "+ bookData);
+  API.updateBook(bookData)
+  .then(res=>{
+    console.log(res.data);
+    this.props.onClickBackdrop();
+  })
+  .catch(err=>console.log(err));
+}
 
-  showUserAddressInfo = () => {
-      if(this.props.book.user){
-          if(this.props.book.user.address && this.props.book.user.share_address){
-              return <p>Address:<br />{this.props.book.user.address.addr_line_1}<br />{this.props.book.user.address.addr_line_2}<br />{this.props.book.user.address.city},{this.props.book.user.address.state} - {this.props.book.user.address.zipcode}</p>;
-          } else{
-              return null;
-          }
-      } else{
-          return null;
-      }
-  }
     render() {
-
+console.log(this.state);
         return (
             //This modal needs to be enhanced to show more book and donor details
             <Modal {...this.props}>
@@ -55,11 +58,26 @@ class BookManageModal extends Component {
                     <p><strong>{this.props.book.author}</strong></p>
                     <p>{this.props.book.desc}</p>
                     <p><strong>Book condition:</strong> {this.props.book.condition}</p>
-                    <p><strong>User notes:</strong> {this.props.book.notes}</p>
-                    {this.showUserMobileInfo()}
-                    {this.showUserAddressInfo()}
 
+                    <form>
+                      <FormGroup
+
+                      >
+                        <ControlLabel><strong>User Notes:</strong></ControlLabel>
+                        <FormControl
+                          className="inputStyle"
+                          name="notes"
+                          type="text"
+                          value={this.state.notes}
+                          placeholder={this.props.book.notes}
+                          onChange={this.handleInputChange}
+                        />
+                      </FormGroup>
+
+
+</form>
                 </div>
+
                 <div className="modal-footer">
                     <button type="button" className="btn btn-primary" onClick={this.props.onClickBackdrop}>
                         Close
@@ -67,8 +85,8 @@ class BookManageModal extends Component {
                     <button type="button" className="btn btn-primary" onClick={()=>{this.deleteBook(this.props.book._id)}}>
                       Delete
                     </button>
-                    <button type="button" className="btn btn-primary">
-                        Edit
+                    <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>
+                        Save
                     </button>
                 </div>
           </Modal>

@@ -34,7 +34,7 @@ class BookBrowseModal extends Component {
     }
 
     render() {
-       
+
         return (
             <Modal {...this.props} dialogClassName="your-dialog-classname">
                 <div className="modal-header">
@@ -52,7 +52,7 @@ class BookBrowseModal extends Component {
                     {this.showUserAddressInfo()}
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-primary" onClick={this.props.onClose}>
+                    <button type="button" className="btn btn-primary" onClick={this.props.onClickBackdrop}>
                         Close
                     </button>
                 </div>
