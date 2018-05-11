@@ -24,11 +24,10 @@ body {
         font-size: 2rem;
         margin-top: 10%;
         padding-bottom: 15%;
-
     }
 
     .button-container {
-        margin-left: 15%;
+        margin-left: 18%;
     }
 
     .browsebtn {
@@ -57,15 +56,19 @@ body {
     }
 
     .heading {
-        margin-left: 25%;
+        margin-left: 40%;
     }
 
     .navbar {
         height: 5.5rem;
     }
+
+    .push {
+        height: 55px;
+    }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (min-width: 480px) and (max-width: 1080px) {
     #barcode {
         margin-left: 5%;
     }
@@ -76,6 +79,10 @@ body {
 
     .browsebtn {
         width: 120px;
+    }
+
+    .button-container {
+        margin-left: 15%;
     }
 
     .donate-btn {

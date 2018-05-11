@@ -130,6 +130,9 @@ class Donate extends Component {
         <Col size="lg-10">
           <div className="style">
             <h2 className="heading">Donate</h2>
+            <Col size="lg-12 md-12 sm-12">
+              <hr></hr>
+            </Col>
             <IsbnSearch
               handleFormSubmit={this.searchClick}
               handleInputChange={this.handleInputChange}
