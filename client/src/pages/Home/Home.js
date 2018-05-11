@@ -33,12 +33,9 @@ class Home extends Component {
   render() {
     return (
       <Container fluid>
+          <h2 className="heading">Home</h2>
         {this.renderRedirect()}
         <Row id="button-row">
-        <Container>
-            <h2 className="heading"> Home
-              </h2>
-        </Container>
               <Browsebtn whenClicked={this.redirectTo}/>
               <Donatebtn whenClicked={this.redirectTo}/> 
             </Row>

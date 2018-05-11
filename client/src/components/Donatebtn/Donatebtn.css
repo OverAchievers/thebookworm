@@ -1,26 +1,23 @@
 .donate-btn {
+	box-shadow: 5px 5px 7px grey;
   	background-color: none;
   	border-radius: 50%;
   	width: 150px; 
-	/* margin-left: 10%; */
-	/* margin-top: 18px; */
+	margin-left: 10%;
+	margin-top: 5%;
 }
 .div-class{
-	width: 20%;
+	width: auto;
 	margin-top: 3%;
-
-
 }
 .donate-para{
 	color: #EB6864;
 	text-align: center;
-	/* margin-right: 38%; */
-	/* margin-bottom: 15px;   */
 }
 .Db{
 	color: #EB6864;
-	margin-top: 12px;
-	margin-left: 18%;	
+	margin-left: 18%;
+	margin-top: 25%;
 	font-weight: bold;
 	font-family: 'Russo One', sans-serif;
 }
